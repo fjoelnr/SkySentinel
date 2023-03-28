@@ -1,0 +1,19 @@
+name: Code Format
+
+on:
+  pull_request:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Install clang-format
+      run: sudo apt-get install -y clang-format
+
+    - name: Run clang-format
+      run: |
+        find . -regex '.*\.\(cpp\|hpp\|cc\|cxx\|c\|h\)' -exec clang-format -style=file -i {} \;
+        git diff --exit-code --color -- . '*.cpp' '*.hpp' '*.cc' '*.cxx' '*.c' '*.h'
