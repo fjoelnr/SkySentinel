@@ -3,17 +3,27 @@
 #include "communication/wifi_communication.h"
 #include "communication/mqtt_communication.h"
 
+
+
 BME280_Sensor bmeSensor;
 WifiCommunication wifiComm;
 MqttCommunication mqttComm(wifiComm);
 
+constexpr int SDA_PIN = 8;
+constexpr int SCL_PIN = 9;
+
 void setup() {
   Serial.begin(115200);
+  Serial.println("Booting...");
+
+  // Wire.begin(SDA_PIN, SCL_PIN);
 
   // Initialize BME280 sensor
   if (!bmeSensor.begin()) {
     Serial.println("Could not find a valid BME280 sensor, check wiring!");
     while (1);
+  } else {
+    Serial.println("Sensor BME280 succesful initialized");
   }
 
   // Connect to Wi-Fi
