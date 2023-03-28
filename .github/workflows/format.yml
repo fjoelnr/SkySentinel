@@ -14,7 +14,7 @@ jobs:
       run: sudo apt-get install -y clang-format
 
     - name: Prepare credentials.h
-      run: cp src/credentials_example.h src/credentials.h
+      run: cp include/credentials_example.h src/credentials.h
 
     - name: Run clang-format
       run: |
