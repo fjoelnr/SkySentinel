@@ -4,7 +4,7 @@ BME280_Sensor::BME280_Sensor() {
 }
 
 bool BME280_Sensor::begin() {
-  if (!bme.begin(0x76)) {
+  if (!bme.begin()) {
     return false;
   }
   return true;

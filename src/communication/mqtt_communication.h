@@ -1,21 +1,30 @@
 #ifndef MQTT_COMMUNICATION_H
 #define MQTT_COMMUNICATION_H
 
-#include <Arduino.h>
+#include <WiFi.h>
 #include <PubSubClient.h>
-#include "wifi_communication.h"
-#include "credentials.h"
 
 class MqttCommunication {
 public:
-  MqttCommunication(WifiCommunication& wifiComm);
+  MqttCommunication(const char* mqttServer, int mqttPort, const char* mqttUsername, const char* mqttPassword);
+
+  void setup();
   bool connect();
-  bool isConnected();
-  bool sendData(const String& topic, const String& data);
+  void disconnect();
+  void publishTemperature(float temperature);
+  void publishHumidity(float humidity);
+  void publishPressure(float pressure);
 
 private:
-  WifiCommunication& _wifiComm;
-  PubSubClient _client;
+  const char* mqttServer;
+  int mqttPort;
+  const char* mqttUsername;
+  const char* mqttPassword;
+  WiFiClient espClient;
+  PubSubClient client;
+
+  void reconnect();
+  void publish(const char* topic, float value);
 };
 
 #endif // MQTT_COMMUNICATION_H

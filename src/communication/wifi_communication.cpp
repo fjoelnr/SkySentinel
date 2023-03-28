@@ -1,25 +1,26 @@
 #include "wifi_communication.h"
 
-WifiCommunication::WifiCommunication() {
+WifiCommunication::WifiCommunication(const char* ssid, const char* password)
+    : ssid(ssid), password(password) {}
+
+void WifiCommunication::setup() {
+  WiFi.mode(WIFI_STA);
 }
 
-bool WifiCommunication::connect() {
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-
-  unsigned long startTime = millis();
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    if (millis() - startTime > 30000) { // Timeout after 30 seconds
-      return false;
+void WifiCommunication::connect() {
+  if (WiFi.status() != WL_CONNECTED) {
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(1000);
+      Serial.println("Connecting to WiFi...");
     }
+    Serial.println("Connected to WiFi");
   }
-  return true;
 }
 
-bool WifiCommunication::isConnected() {
-  return WiFi.status() == WL_CONNECTED;
-}
-
-WiFiClient& WifiCommunication::getClient() {
-  return _client;
+void WifiCommunication::disconnect() {
+  if (WiFi.status() == WL_CONNECTED) {
+    WiFi.disconnect();
+    Serial.println("Disconnected from WiFi");
+  }
 }

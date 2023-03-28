@@ -2,21 +2,27 @@
 #include "sensors/bme280_sensor.h"
 #include "communication/wifi_communication.h"
 #include "communication/mqtt_communication.h"
-
+#include "credentials.h"
+#include "esp_sleep.h"
 
 
 BME280_Sensor bmeSensor;
-WifiCommunication wifiComm;
-MqttCommunication mqttComm(wifiComm);
+WifiCommunication wifi(WIFI_SSID, WIFI_PASSWORD);
+MqttCommunication mqtt(MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD);
 
-constexpr int SDA_PIN = 8;
-constexpr int SCL_PIN = 9;
+// Zeit zwischen den Messungen und Datenübertragungen in Sekunden
+const int sleepTimeInSeconds = 60;
+
+void goToDeepSleep(uint64_t sleepTimeInMicroseconds) {
+  esp_sleep_enable_timer_wakeup(sleepTimeInMicroseconds);
+  esp_deep_sleep_start();
+}
 
 void setup() {
   Serial.begin(115200);
   Serial.println("Booting...");
+  delay(1000);
 
-  // Wire.begin(SDA_PIN, SCL_PIN);
 
   // Initialize BME280 sensor
   if (!bmeSensor.begin()) {
@@ -26,41 +32,38 @@ void setup() {
     Serial.println("Sensor BME280 succesful initialized");
   }
 
-  // Connect to Wi-Fi
-  Serial.println("Connecting to Wi-Fi...");
-  if (wifiComm.connect()) {
-    Serial.println("Connected to Wi-Fi!");
-  } else {
-    Serial.println("Failed to connect to Wi-Fi.");
-    while (1);
-  }
+  // Setup Wi-Fi
+  Serial.println("Setup Wi-Fi...");
+  wifi.setup();
 
-  // Connect to MQTT server
-  Serial.println("Connecting to MQTT server...");
-  if (mqttComm.connect()) {
-    Serial.println("Connected to MQTT server!");
-  } else {
-    Serial.println("Failed to connect to MQTT server.");
-    while (1);
-  }
+  // Setup MQTT server
+  Serial.println("Setup MQTT server...");
+  mqtt.setup();
 }
 
 void loop() {
-  // Read sensor data
-  float temperature = bmeSensor.readTemperature();
-  float humidity = bmeSensor.readHumidity();
-  float pressure = bmeSensor.readPressure();
+  // connect to Wi-Fi
+  wifi.connect();
 
+  // connect to MQTT-server
+  if (mqtt.connect()) {
+    // Read sensor data
+    float temperature = bmeSensor.readTemperature();
+    float humidity = bmeSensor.readHumidity();
+    float pressure = bmeSensor.readPressure();
 
-  // Send sensor data to MQTT server
-  String temperatureTopic = "sensors/bme280/temperature";
-  String humidityTopic = "sensors/bme280/humidity";
-  String pressureTopic = "sensors/bme280/pressure";
+    // Send sensor data to MQTT server
+    mqtt.publishTemperature(temperature);
+    mqtt.publishHumidity(humidity);
+    mqtt.publishPressure(pressure);
 
-  mqttComm.sendData(temperatureTopic, String(temperature));
-  mqttComm.sendData(humidityTopic, String(humidity));
-  mqttComm.sendData(pressureTopic, String(pressure));
+    // disconnect from MQTT server
+    mqtt.disconnect();
+  }
 
-  // Wait for 1 minute before sending data again
-  delay(60000);
+  // disconnect from WiFi
+  wifi.disconnect();
+  
+  // Go to Deep Sleep Mode and wait for the defined time
+  goToDeepSleep(sleepTimeInSeconds * 1000000);
 }

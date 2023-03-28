@@ -1,19 +1,19 @@
 #ifndef WIFI_COMMUNICATION_H
 #define WIFI_COMMUNICATION_H
 
-#include <Arduino.h>
 #include <WiFi.h>
-#include "credentials.h"
 
 class WifiCommunication {
 public:
-  WifiCommunication();
-  bool connect();
-  bool isConnected();
-  WiFiClient& getClient();
+  WifiCommunication(const char* ssid, const char* password);
+
+  void setup();
+  void connect();
+  void disconnect();
 
 private:
-  WiFiClient _client;
+  const char* ssid;
+  const char* password;
 };
 
 #endif // WIFI_COMMUNICATION_H
