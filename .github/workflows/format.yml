@@ -1,6 +1,7 @@
 name: Code Format
 
 on:
+  push:
   pull_request:
 
 jobs:
