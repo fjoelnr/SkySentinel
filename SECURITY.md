@@ -12,7 +12,7 @@ We provide security updates and patches for the most recent version of the proje
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in the Modular Weather Station for ESP32 project, please do not create a public issue on GitHub. Instead, send an email to the project maintainers at [INSERT YOUR EMAIL ADDRESS] with the following information:
+If you discover a security vulnerability in the Modular Weather Station for ESP32 project, please do not create a public issue on GitHub. Instead, send an email to the project maintainers at thrudhamar@web.de with the following information:
 
 * A detailed description of the vulnerability
 * Steps to reproduce the vulnerability
