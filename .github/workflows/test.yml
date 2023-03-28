@@ -21,6 +21,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install platformio
 
+    - name: Prepare credentials.h
+      run: cp include/credentials_example.h include/credentials.h
+
     - name: Test Build
       run: |
         platformio run
