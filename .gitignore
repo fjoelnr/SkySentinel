@@ -1,3 +1,6 @@
+# Exclude credentials file
+credentials.h
+
 # C++
 
 # Prerequisites
