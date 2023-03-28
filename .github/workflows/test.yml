@@ -22,7 +22,7 @@ jobs:
         pip install platformio
 
     - name: Prepare credentials.h
-      run: cp src/credentials_example.h src/credentials.h
+      run: cp include/credentials_example.h src/credentials.h
 
     - name: Test Build
       run: |
