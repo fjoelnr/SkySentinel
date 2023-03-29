@@ -16,6 +16,8 @@ This project is designed to be easily extended and customized to suit your needs
 * Easy integration with other sensors and data platforms
 * Compatible with ESP32-S2-Saola-1 and ESP32-S2-Kaluga-1 development boards
 
+For the planned features and improvements, please refer to the [Roadmap](ROADMAP.md).
+
 ### Getting Started
 
 To get started with the Modular Weather Station for ESP32, follow the instructions in the [setup guide](SETUP.md).
@@ -51,6 +53,8 @@ Dieses Projekt wurde entwickelt, um einfach erweitert und an Ihre Bedürfnisse a
 * MQTT-Datenübertragung
 * Einfache Integration mit anderen Sensoren und Datenplattformen
 * Kompatibel mit ESP32-S2-Saola-1 und ESP32-S2-Kaluga-1-Entwicklungsboards
+
+Für die geplanten Funktionen und Verbesserungen, bitte schauen Sie in die [Roadmap](ROADMAP.md).
 
 ### Erste Schritte
 
