@@ -2,6 +2,7 @@
 #include "sensors/bme280_sensor.h"
 #include "communication/wifi_communication.h"
 #include "communication/mqtt_communication.h"
+#include "visualization/display_communication.h"
 #include "credentials.h"
 #include "esp_sleep.h"
 
@@ -23,6 +24,9 @@ void setup() {
   Serial.println("Booting...");
   delay(1000);
 
+  #if defined(ESP32_KALUGA)
+    setupDisplay();
+  #endif
 
   // Initialize BME280 sensor
   if (!bmeSensor.begin()) {
@@ -51,6 +55,10 @@ void loop() {
     float temperature = bmeSensor.readTemperature();
     float humidity = bmeSensor.readHumidity();
     float pressure = bmeSensor.readPressure();
+
+    #if defined(ESP32_KALUGA)
+      displayData(temperature, humidity, pressure);
+    #endif
 
     // Send sensor data to MQTT server
     mqtt.publishTemperature(temperature);
