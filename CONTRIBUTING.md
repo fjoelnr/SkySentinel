@@ -1,46 +1,85 @@
-# Contributing to Modular Weather Station for ESP32
+# Contributing to Weather Station Project
 
-First off, thank you for considering contributing to the Modular Weather Station for ESP32 project! Your help is greatly appreciated, and we welcome all kinds of contributions, from bug reports and feature requests to code improvements and new features.
-
-The following guidelines will help you get started and ensure a smooth contribution process.
+Thank you for your interest in contributing to the Weather Station project! We appreciate your involvement and look forward to collaborating with you. Please follow these guidelines to ensure a smooth contribution process.
 
 ## Code of Conduct
 
-By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). Please make sure to read and follow it to maintain a welcoming and inclusive environment for all contributors.
+By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). Please read it before engaging in any interactions with other contributors.
 
 ## Reporting Issues
 
-If you encounter a bug or have a feature request, please check the [Issues](https://github.com/fjoelnr/SkySentinel/issues) section of the project to see if someone has already reported a similar issue. If not, create a new issue, providing as much relevant information as possible to help us understand and reproduce the problem.
+If you encounter any problems or have suggestions for new features, please open an issue in the project's issue tracker on GitHub. Be sure to provide enough information for us to understand and reproduce the problem.
 
-## Pull Requests
+## Branching Model
 
-If you'd like to contribute code, documentation, or other project assets, follow these steps:
+We follow a Git-Flow-inspired branching model to ensure well-organized development:
 
-1. Fork the project repository.
-2. Create a new branch for your changes.
-3. Commit your changes to the new branch, following the [coding style guidelines](#coding-style-guidelines) outlined below.
-4. Push your changes to your forked repository.
-5. Create a pull request, describing the changes you've made and the issue(s) they address.
+1. `main` branch: This branch contains the stable version of the code ready for production. Each release is tagged in this branch.
 
-Please note that the project maintainers may request changes or further information before merging your pull request. They may also decide not to merge your changes if they don't align with the project's goals or requirements.
+2. `develop` branch: This branch serves as the basis for active development and integration of new features. All new developments should take place in feature branches and be merged back into the `develop` branch.
 
-## Coding Style Guidelines
+3. Feature branches: These branches are created for the development of new features or improvements. They are created from the `develop` branch and merged back into it once development is complete.
 
-To maintain consistency and readability throughout the codebase, please adhere to the following coding style guidelines:
+   Example: `feature/temperature-sensor`
 
-* Use spaces for indentation (no tabs).
-* Follow the [K&R style](https://en.wikipedia.org/wiki/Indentation_style#K&R_style) for code indentation and formatting.
-* Keep line lengths under 80 characters when possible.
-* Use meaningful variable and function names.
-* Comment your code to explain complex or non-obvious sections.
-* Organize your code into small, focused functions and classes.
+4. Release branches: When the `develop` branch has reached sufficient stability and a new version is to be released, a release branch is created. Final changes and bug fixes are made in this branch before merging the release into the `main` branch.
 
-## Testing
+   Example: `release/v1.0.0`
 
-Before submitting your pull request, please ensure that your changes do not break existing functionality by testing your code on the supported ESP32 microcontrollers. If your changes introduce new features or affect existing behavior, please update or add new test cases accordingly.
+5. Hotfix branches: These branches are created when urgent bug fixes are required in the production version. They are created from the `main` branch and merged back into both the `main` and `develop` branches once the bug fix is complete.
 
-## License
+   Example: `hotfix/1.0.1`
 
-By contributing to this project, you agree that your contributions will be licensed under the project's [MIT License](LICENSE).
+Please follow this branching model when contributing to the project.
 
-Once again, thank you for your interest in contributing to the Modular Weather Station for ESP32 project! We look forward to collaborating with you.
+## Submitting Pull Requests
+
+When you're ready to submit your changes, please create a pull request against the appropriate branch (usually `develop`). Be sure to describe your changes in detail and reference any related issues.
+
+Your pull request will be reviewed by the maintainers, who may request changes or provide feedback. Once your changes have been approved, they will be merged into the appropriate branch.
+
+Thank you for your contributions!
+
+---
+
+# Beitrag zum Weather Station Projekt
+
+Vielen Dank für Ihr Interesse an der Mitarbeit am Weather Station Projekt! Wir schätzen Ihr Engagement und freuen uns auf die Zusammenarbeit mit Ihnen. Bitte beachten Sie diese Richtlinien, um einen reibungslosen Beitragungsprozess zu gewährleisten.
+
+## Verhaltenskodex
+
+Durch die Teilnahme an diesem Projekt erklären Sie sich damit einverstanden, unseren [Verhaltenskodex](CODE_OF_CONDUCT.md) einzuhalten. Bitte lesen Sie diesen, bevor Sie sich in Interaktionen mit anderen Mitwirkenden einlassen.
+
+## Probleme melden
+
+Wenn Sie auf Probleme stoßen oder Vorschläge für neue Funktionen haben, öffnen Sie bitte ein Issue im Issue-Tracker des Projekts auf GitHub. Stellen Sie sicher, dass Sie genügend Informationen bereitstellen, damit wir das Problem verstehen und reproduzieren können.
+
+## Branching-Modell
+
+Wir folgen einem vom Git-Flow inspirierten Branching-Modell, um eine gut organisierte Entwicklung zu gewährleisten:
+
+1. `main`-Branch: Dieser Branch enthält die stabile Version des Codes, die für die Produktion bereit ist. Jedes Release wird in diesem Branch getaggt.
+
+2. `develop`-Branch: Dieser Branch dient als Grundlage für die aktive Entwicklung und Integration neuer Funktionen. Alle neuen Entwicklungen sollten in Feature-Branches stattfinden und in den `develop`-Branch zurückgemergt werden.
+
+3. Feature-Branches: Diese Branches werden für die Entwicklung neuer Funktionen oder Verbesserungen erstellt. Sie werden vom `develop`-Branch erstellt und nach Abschluss der Entwicklung wieder in diesen zurückgemergt.
+
+   Beispiel: `feature/temperature-sensor`
+
+4. Release-Branches: Wenn der `develop`-Branch eine ausreichende Stabilität erreicht hat und eine neue Version veröffentlicht werden soll, wird ein Release-Branch erstellt. In diesem Branch werden die letzten Änderungen und Fehlerbehebungen vorgenommen, bevor das Release in den `main`-Branch gemergt wird.
+
+   Beispiel: `release/v1.0.0`
+
+5. Hotfix-Branches: Diese Branches werden erstellt, wenn dringende Fehlerbehebungen in der Produktionsversion erforderlich sind. Sie werden vom `main`-Branch erstellt und nach Abschluss der Fehlerbehebung in den `main`- und `develop`-Branch zurückgemergt.
+
+   Beispiel: `hotfix/1.0.1`
+
+Bitte folgen Sie diesem Branching-Modell, wenn Sie zum Projekt beitragen.
+
+## Pull Requests einreichen
+
+Wenn Sie Ihre Änderungen einreichen möchten, erstellen Sie bitte einen Pull Request gegen den entsprechenden Branch (normalerweise `develop`). Beschreiben Sie Ihre Änderungen ausführlich und verweisen Sie auf alle zugehörigen Issues.
+
+Ihr Pull Request wird von den Maintainers überprüft, die möglicherweise Änderungen anfordern oder Rückmeldungen geben. Sobald Ihre Änderungen genehmigt wurden, werden sie in den entsprechenden Branch gemergt.
+
+Vielen Dank für Ihre Beiträge!
