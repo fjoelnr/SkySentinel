@@ -11,9 +11,11 @@ public:
   void setup();
   bool connect();
   void disconnect();
+  void publishSensorData(float temperature, float humidity, float pressure);
   void publishTemperature(float temperature);
   void publishHumidity(float humidity);
   void publishPressure(float pressure);
+  void readSensorData(float &temperature, float &humidity, float &pressure);
 
 private:
   const char* mqttServer;
