@@ -12,10 +12,13 @@ public:
   void showWeatherData(float temperature, float humidity, float pressure);
 
 private:
+  void updateTemperature(float temperature);
+  void updateHumidity(float humidity);
+  void updatePressure(float pressure);
   Adafruit_ST7789 tft;
-  void drawTemperature(float temperature);
-  void drawHumidity(float humidity);
-  void drawPressure(float pressure);
+  float lastTemperature = 0;
+  float lastHumidity = 0;
+  float lastPressure = 0;
 };
 
 #endif // DISPLAY_COMMUNICATION_H

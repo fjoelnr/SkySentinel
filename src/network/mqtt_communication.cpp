@@ -82,7 +82,7 @@ void MqttCommunication::readSensorData(float &temperature, float &humidity, floa
     } else if (topic_str == "weather_station/humidity") {
       humidity = value;
     } else if (topic_str == "weather_station/pressure") {
-      pressure = value;
+      pressure = value / 100.0F;
     }
   });
 

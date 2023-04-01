@@ -22,5 +22,5 @@ float BME280Communication::readHumidity() {
 }
 
 float BME280Communication::readPressure() {
-  return bme.readPressure();
+  return bme.readPressure() / 100.0F;
 }
