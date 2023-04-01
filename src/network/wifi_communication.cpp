@@ -9,15 +9,15 @@ void WifiCommunication::setup() {
 
 void WifiCommunication::connect() {
   if (WiFi.status() != WL_CONNECTED) {
+    Serial.print("Connecting to " + String(ssid) + " ");
     WiFi.begin(ssid, password);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.print(".");
-    }
+    while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    Serial.println("Connection Failed! Rebooting...");
+    delay(5000);
+    ESP.restart();
+  }
     Serial.println("");
-    Serial.println("Connected to WiFi");
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
+    Serial.println("WiFi connected with IP address: " + WiFi.localIP().toString());
   }
 }
 

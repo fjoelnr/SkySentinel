@@ -7,8 +7,8 @@
 
 class BME280Communication {
 public:
-  BME280Communication(uint8_t i2cAddress);
-  bool begin(TwoWire &wire = Wire);
+  BME280Communication();
+  bool begin();
   void readSensorData(float &temperature, float &humidity, float &pressure);
   float readTemperature();
   float readHumidity();
@@ -17,6 +17,8 @@ public:
 private:
   Adafruit_BME280 bme;
   uint8_t _i2cAddress;
+  int _sdaPin;
+  int _sclPin;
 };
 
 #endif // BME280_COMMUNICATION_H

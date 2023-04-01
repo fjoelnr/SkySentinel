@@ -41,7 +41,12 @@ void MqttCommunication::publishPressure(float pressure) {
 void MqttCommunication::reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (client.connect("ESP32Kaluga", mqttUsername, mqttPassword)) {
+    #ifdef ESP32_SAOLA
+      if (client.connect("ESP32Kaluga", mqttUsername, mqttPassword)) {
+    #endif
+    #ifdef ESP32_KALUGA
+      if (client.connect("ESP32Kaluga", mqttUsername, mqttPassword)) {
+    #endif
       Serial.println("connected");
     } else {
       Serial.print("failed, rc=");

@@ -7,15 +7,17 @@ void DisplayCommunication::begin() {
   tft.init(240, 320);
   tft.setRotation(3);
   tft.fillScreen(ST77XX_BLACK);
-  delay(500);
+  delay(100);
   tft.fillScreen(ST77XX_WHITE);
-  delay(500);
+  delay(100);
   tft.fillScreen(ST77XX_BLACK);
+  delay(100);
   tft.setTextSize(2);
   tft.setTextColor(ST77XX_WHITE);
   tft.setCursor(10, 10);
   tft.setTextWrap(true);
   tft.print("Weather Station");
+  delay(100);
 }
 
 void DisplayCommunication::showWeatherData(float temperature, float humidity, float pressure) {
@@ -25,9 +27,13 @@ void DisplayCommunication::showWeatherData(float temperature, float humidity, fl
   tft.setCursor(10, 10);
   tft.setTextWrap(true);
   tft.print("Weather Station");
+  delay(100);
   drawTemperature(temperature);
+  delay(100);
   drawHumidity(humidity);
+  delay(100);
   drawPressure(pressure);
+  delay(100);
 }
 
 void DisplayCommunication::drawTemperature(float temperature) {

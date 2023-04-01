@@ -1,15 +1,16 @@
 #include "bme280_communication.h"
 
-BME280Communication::BME280Communication(uint8_t i2cAddress) : _i2cAddress(i2cAddress) {}
+BME280Communication::BME280Communication() {
+}
 
-bool BME280Communication::begin(TwoWire &wire) {
-  return bme.begin(_i2cAddress, &wire);
+bool BME280Communication::begin() {
+  return bme.begin();
 }
 
 void BME280Communication::readSensorData(float &temperature, float &humidity, float &pressure) {
-  temperature = bme.readTemperature();
-  humidity = bme.readHumidity();
-  pressure = bme.readPressure() / 100.0F;
+  temperature = readTemperature();
+  humidity = readHumidity();
+  pressure = readPressure();
 }
 
 float BME280Communication::readTemperature() {
@@ -21,5 +22,5 @@ float BME280Communication::readHumidity() {
 }
 
 float BME280Communication::readPressure() {
-  return bme.readPressure() / 100.0F;
+  return bme.readPressure();
 }

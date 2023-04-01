@@ -14,7 +14,7 @@
 #define TFT_RST 16
 #define TFT_BL 6
 
-BME280Communication bme(0x76); // oder 0x77, je nach Konfiguration
+BME280Communication bme;
 DisplayCommunication display(TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST);
 WifiCommunication wifi(WIFI_SSID, WIFI_PASSWORD);
 MqttCommunication mqtt(MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD);
@@ -58,9 +58,15 @@ void setup() {
 void loop() {
   
   #ifdef ESP32_SAOLA
-    bme.readSensorData(temperature, humidity, pressure);
-    mqtt.publishSensorData(temperature, humidity, pressure);
+    if (mqtt.connect()) {
+      bme.readSensorData(temperature, humidity, pressure);
+
+      mqtt.publishSensorData(temperature, humidity, pressure);
     
+      // disconnect from MQTT server
+      mqtt.disconnect();
+    }
+
     // Go to Deep Sleep Mode and wait for the defined time
     goToDeepSleep(sleepTimeInSeconds * 1000000);
 
@@ -71,7 +77,7 @@ void loop() {
     mqtt.readSensorData(temperature, humidity, pressure);
     display.showWeatherData(temperature, humidity, pressure);
 
-    delay(5000);
+    delay(10000);
 
   #endif
 
