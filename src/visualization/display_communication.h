@@ -15,6 +15,7 @@ private:
   void updateTemperature(float temperature);
   void updateHumidity(float humidity);
   void updatePressure(float pressure);
+  void drawHistoryGraphs();
   Adafruit_ST7789 tft;
   float lastTemperature = 0;
   float lastHumidity = 0;
