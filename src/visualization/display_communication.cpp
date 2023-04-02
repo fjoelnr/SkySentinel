@@ -113,7 +113,7 @@ void DisplayCommunication::updatePressure(float pressure) {
 
 void DisplayCommunication::drawHistoryGraphs() {
   int graphWidth = 200;
-  int graphHeight = 70;
+  int graphHeight = 40;
   int graphX = 20;
   
   // Temperature graph position

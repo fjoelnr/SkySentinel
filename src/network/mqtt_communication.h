@@ -15,7 +15,10 @@ public:
   void publishTemperature(float temperature);
   void publishHumidity(float humidity);
   void publishPressure(float pressure);
+  void subscribeToSensorData();
   void readSensorData(float &temperature, float &humidity, float &pressure);
+  void updateSensorData(String topic_str, float value);
+  void processCallbacks();
 
 private:
   const char* mqttServer;
@@ -23,10 +26,17 @@ private:
   const char* mqttUsername;
   const char* mqttPassword;
   WiFiClient espClient;
-  PubSubClient client;
+  PubSubClient client;  
+  float temperature;
+  float humidity;
+  float pressure;
+
 
   void reconnect();
   void publish(const char* topic, float value);
 };
+
+extern MqttCommunication* mqttCommPtr;
+void mqttCallback(char* topic, byte* payload, unsigned int length);
 
 #endif // MQTT_COMMUNICATION_H

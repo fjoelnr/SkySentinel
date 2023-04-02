@@ -51,7 +51,9 @@ void setup() {
 
   #ifdef ESP32_KALUGA
     display.begin();
+    mqtt.connect(); // Die Abonnements werden jetzt in der connect()-Methode eingerichtet
   #endif
+
 
 }
 
@@ -62,6 +64,13 @@ void loop() {
       bme.readSensorData(temperature, humidity, pressure);
 
       mqtt.publishSensorData(temperature, humidity, pressure);
+
+      Serial.print("MQTT publish: BME280 Temperature: ");
+      Serial.println(temperature);
+      Serial.print("MQTT publish: BME280 Humidity: ");
+      Serial.println(humidity);
+      Serial.print("MQTT publish: BME280 Pressure: ");
+      Serial.println(pressure);
     
       // disconnect from MQTT server
       mqtt.disconnect();
@@ -73,12 +82,23 @@ void loop() {
   #endif
 
   #ifdef ESP32_KALUGA
-    mqtt.connect(); // Stelle sicher, dass Du mit dem MQTT-Server verbunden bist
-    mqtt.readSensorData(temperature, humidity, pressure);
-    display.showWeatherData(temperature, humidity, pressure);
+    if (mqtt.connect()) { // Stelle sicher, dass Du mit dem MQTT-Server verbunden bist
+      mqtt.processCallbacks(); // Aufruf des MQTT-Clients, um den Callback aufzurufen und die Sensorwerte zu aktualisieren
 
-    delay(10000);
+       // Sensorwerte aus der mqtt_communication Klasse abrufen
+      mqtt.readSensorData(temperature, humidity, pressure);
+
+      Serial.print("MQTT subscribe: BME280 Temperature: ");
+      Serial.println(temperature);
+      Serial.print("MQTT subscribe: BME280 Humidity: ");
+      Serial.println(humidity);
+      Serial.print("MQTT subscribe: BME280 Pressure: ");
+      Serial.println(pressure);
+
+      display.showWeatherData(temperature, humidity, pressure);
+    }
+
+    delay(sleepTimeInSeconds *100);
 
   #endif
-
 }
