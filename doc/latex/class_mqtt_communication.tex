@@ -1,0 +1,47 @@
+\hypertarget{class_mqtt_communication}{}\doxysection{Mqtt\+Communication Class Reference}
+\label{class_mqtt_communication}\index{MqttCommunication@{MqttCommunication}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a22660e6ea28b3b9ea83c7682516810bc}\label{class_mqtt_communication_a22660e6ea28b3b9ea83c7682516810bc}} 
+{\bfseries Mqtt\+Communication} (const char $\ast$mqtt\+Server, int mqtt\+Port, const char $\ast$mqtt\+Username, const char $\ast$mqtt\+Password)
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a2c7c2f51eb6f7ac45c1f9577df75be48}\label{class_mqtt_communication_a2c7c2f51eb6f7ac45c1f9577df75be48}} 
+void {\bfseries setup} ()
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a80037151a531764df08d8e30a3957d3a}\label{class_mqtt_communication_a80037151a531764df08d8e30a3957d3a}} 
+bool {\bfseries connect} ()
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a4e254d53958e6a6e645c257049fc60b1}\label{class_mqtt_communication_a4e254d53958e6a6e645c257049fc60b1}} 
+void {\bfseries disconnect} ()
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_acf58198b118eb366a885bc6733440afb}\label{class_mqtt_communication_acf58198b118eb366a885bc6733440afb}} 
+void {\bfseries publish\+Sensor\+Data} (float temperature, float humidity, float pressure)
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a6a0b8e988201e278e5c0fcd304ad964d}\label{class_mqtt_communication_a6a0b8e988201e278e5c0fcd304ad964d}} 
+void {\bfseries publish\+Temperature} (float temperature)
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_ab637de67501e83d45b00b22bf1ee79ce}\label{class_mqtt_communication_ab637de67501e83d45b00b22bf1ee79ce}} 
+void {\bfseries publish\+Humidity} (float humidity)
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a25bcc47329165338ff0f9690f3873079}\label{class_mqtt_communication_a25bcc47329165338ff0f9690f3873079}} 
+void {\bfseries publish\+Pressure} (float pressure)
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_aa38c005c7da6c3061aeabf6a12bd3588}\label{class_mqtt_communication_aa38c005c7da6c3061aeabf6a12bd3588}} 
+void {\bfseries subscribe\+To\+Sensor\+Data} ()
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_af571c6794ed905b4155ce37e8812c352}\label{class_mqtt_communication_af571c6794ed905b4155ce37e8812c352}} 
+void {\bfseries read\+Sensor\+Data} (float \&temperature, float \&humidity, float \&pressure)
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a5e433bdaa5b08a1cd1b9ed4a5780d903}\label{class_mqtt_communication_a5e433bdaa5b08a1cd1b9ed4a5780d903}} 
+void {\bfseries update\+Sensor\+Data} (String topic\+\_\+str, float value)
+\item 
+\mbox{\Hypertarget{class_mqtt_communication_a60a735d30cdb7867f1b71e4731ce4759}\label{class_mqtt_communication_a60a735d30cdb7867f1b71e4731ce4759}} 
+void {\bfseries process\+Callbacks} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/network/mqtt\+\_\+communication.\+h\item 
+src/network/mqtt\+\_\+communication.\+cpp\end{DoxyCompactItemize}

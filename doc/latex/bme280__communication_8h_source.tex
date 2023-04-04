@@ -1,0 +1,30 @@
+\hypertarget{bme280__communication_8h_source}{}\doxysection{bme280\+\_\+communication.\+h}
+\label{bme280__communication_8h_source}\index{src/sensors/bme280\_communication.h@{src/sensors/bme280\_communication.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BME280\_COMMUNICATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BME280\_COMMUNICATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Adafruit\_Sensor.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <Adafruit\_BME280.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_b_m_e280_communication}{BME280Communication}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \mbox{\hyperlink{class_b_m_e280_communication}{BME280Communication}}();}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{bool}\ begin();}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{void}\ readSensorData(\textcolor{keywordtype}{float}\ \&temperature,\ \textcolor{keywordtype}{float}\ \&humidity,\ \textcolor{keywordtype}{float}\ \&pressure);}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{float}\ readTemperature();}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{float}\ readHumidity();}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{float}\ readPressure();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ Adafruit\_BME280\ bme;}
+\DoxyCodeLine{00019\ \ \ uint8\_t\ \_i2cAddress;}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{int}\ \_sdaPin;}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{int}\ \_sclPin;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BME280\_COMMUNICATION\_H}}
+
+\end{DoxyCode}

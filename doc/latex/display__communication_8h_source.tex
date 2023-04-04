@@ -1,0 +1,31 @@
+\hypertarget{display__communication_8h_source}{}\doxysection{display\+\_\+communication.\+h}
+\label{display__communication_8h_source}\index{src/visualization/display\_communication.h@{src/visualization/display\_communication.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DISPLAY\_COMMUNICATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DISPLAY\_COMMUNICATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Adafruit\_GFX.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Adafruit\_ST7789.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_display_communication}{DisplayCommunication}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \mbox{\hyperlink{class_display_communication}{DisplayCommunication}}(int8\_t\ csPin,\ int8\_t\ dcPin,\ int8\_t\ mosiPin,\ int8\_t\ sclkPin,\ int8\_t\ rstPin);}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{void}\ begin();}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{void}\ showWeatherData(\textcolor{keywordtype}{float}\ temperature,\ \textcolor{keywordtype}{float}\ humidity,\ \textcolor{keywordtype}{float}\ pressure);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{void}\ updateTemperature(\textcolor{keywordtype}{float}\ temperature);}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{void}\ updateHumidity(\textcolor{keywordtype}{float}\ humidity);}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ updatePressure(\textcolor{keywordtype}{float}\ pressure);}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ drawHistoryGraphs();}
+\DoxyCodeLine{00019\ \ \ Adafruit\_ST7789\ tft;}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{float}\ lastTemperature\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{float}\ lastHumidity\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{float}\ lastPressure\ =\ 0;}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DISPLAY\_COMMUNICATION\_H}}
+
+\end{DoxyCode}

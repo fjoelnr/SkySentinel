@@ -1,3 +1,15 @@
+/**
+ * @file main.cpp
+ * @author fjoelnr
+ * @date 2023-03-22
+ * 
+ * @brief Main program file for the weather station project.
+ * 
+ * This file contains the main program loop and setup functions for the
+ * weather station project, which integrates BME280 sensor data, display,
+ * Wi-Fi, and MQTT communication.
+ */
+
 #include <Arduino.h>
 #include "sensors/bme280_communication.h"
 #include "visualization/display_communication.h"
@@ -6,6 +18,7 @@
 #include "credentials.h"
 #include "esp_sleep.h"
 
+// Display pins configuration
 #define TFT_CLK 15
 #define TFT_MISO 8
 #define TFT_MOSI 9
@@ -14,21 +27,30 @@
 #define TFT_RST 16
 #define TFT_BL 6
 
+// Sensor and communication objects
 BME280Communication bme;
 DisplayCommunication display(TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST);
 WifiCommunication wifi(WIFI_SSID, WIFI_PASSWORD);
 MqttCommunication mqtt(MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD);
 
+// Variables to store sensor data
 float temperature, humidity, pressure;
 
-// Zeit zwischen den Messungen und Datenübertragungen in Sekunden
+// Time between measurements and data transfers in seconds
 const int sleepTimeInSeconds = 60;
 
+/**
+ * @brief Puts the ESP32 into deep sleep mode for a specified time.
+ * @param sleepTimeInMicroseconds Time to sleep in microseconds.
+ */
 void goToDeepSleep(uint64_t sleepTimeInMicroseconds) {
   esp_sleep_enable_timer_wakeup(sleepTimeInMicroseconds);
   esp_deep_sleep_start();
 }
 
+/**
+ * @brief Initializes the system.
+ */
 void setup() {
   Serial.begin(115200);
   Serial.println("Booting...");
@@ -51,12 +73,13 @@ void setup() {
 
   #ifdef ESP32_KALUGA
     display.begin();
-    mqtt.connect(); // Die Abonnements werden jetzt in der connect()-Methode eingerichtet
+    mqtt.connect(); // Subscriptions are now set up in the connect() method
   #endif
-
-
 }
 
+/**
+ * @brief Main program loop.
+ */
 void loop() {
   
   #ifdef ESP32_SAOLA
@@ -82,10 +105,10 @@ void loop() {
   #endif
 
   #ifdef ESP32_KALUGA
-    if (mqtt.connect()) { // Stelle sicher, dass Du mit dem MQTT-Server verbunden bist
-      mqtt.processCallbacks(); // Aufruf des MQTT-Clients, um den Callback aufzurufen und die Sensorwerte zu aktualisieren
+    if (mqtt.connect()) { // Ensure connected to MQTT server
+      mqtt.processCallbacks(); // Call MQTT client to trigger callback and update sensor values
 
-       // Sensorwerte aus der mqtt_communication Klasse abrufen
+       // Get sensor values from mqtt_communication class
       mqtt.readSensorData(temperature, humidity, pressure);
 
       Serial.print("MQTT subscribe: BME280 Temperature: ");

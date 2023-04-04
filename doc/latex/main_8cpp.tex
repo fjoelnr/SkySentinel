@@ -1,0 +1,107 @@
+\hypertarget{main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+
+
+Main program file for the weather station project.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sensors/bme280\+\_\+communication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}visualization/display\+\_\+communication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}network/wifi\+\_\+communication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}network/mqtt\+\_\+communication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}credentials.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+sleep.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a05f425917672194cf628897cb46cbf9d}\label{main_8cpp_a05f425917672194cf628897cb46cbf9d}} 
+\#define {\bfseries TFT\+\_\+\+CLK}~15
+\item 
+\mbox{\Hypertarget{main_8cpp_ac108dd4310833bbb4afd1bce1090d55f}\label{main_8cpp_ac108dd4310833bbb4afd1bce1090d55f}} 
+\#define {\bfseries TFT\+\_\+\+MISO}~8
+\item 
+\mbox{\Hypertarget{main_8cpp_a4db639d2d88a53132a529677e6dd795c}\label{main_8cpp_a4db639d2d88a53132a529677e6dd795c}} 
+\#define {\bfseries TFT\+\_\+\+MOSI}~9
+\item 
+\mbox{\Hypertarget{main_8cpp_a5f4d46ae101b77df78010c506601c87c}\label{main_8cpp_a5f4d46ae101b77df78010c506601c87c}} 
+\#define {\bfseries TFT\+\_\+\+CS}~11
+\item 
+\mbox{\Hypertarget{main_8cpp_a51529307207622c113ff0d584536be13}\label{main_8cpp_a51529307207622c113ff0d584536be13}} 
+\#define {\bfseries TFT\+\_\+\+DC}~13
+\item 
+\mbox{\Hypertarget{main_8cpp_ab40e9918d9141415a47e2a979292309c}\label{main_8cpp_ab40e9918d9141415a47e2a979292309c}} 
+\#define {\bfseries TFT\+\_\+\+RST}~16
+\item 
+\mbox{\Hypertarget{main_8cpp_a541b5fc642dbcc81f373d4b866c88f80}\label{main_8cpp_a541b5fc642dbcc81f373d4b866c88f80}} 
+\#define {\bfseries TFT\+\_\+\+BL}~6
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a2770eb0755b5f3e363a64558cb0f1bd9}{go\+To\+Deep\+Sleep}} (uint64\+\_\+t sleep\+Time\+In\+Microseconds)
+\begin{DoxyCompactList}\small\item\em Puts the ESP32 into deep sleep mode for a specified time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+void {\bfseries setup} ()
+\begin{DoxyCompactList}\small\item\em Initializes the system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{main_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+void {\bfseries loop} ()
+\begin{DoxyCompactList}\small\item\em Main program loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a4230af91cdee65c7b442014445bb9bde}\label{main_8cpp_a4230af91cdee65c7b442014445bb9bde}} 
+\mbox{\hyperlink{class_b_m_e280_communication}{BME280\+Communication}} {\bfseries bme}
+\item 
+\mbox{\Hypertarget{main_8cpp_a42cc4b57ccb0d8cd5601cfffa27fec59}\label{main_8cpp_a42cc4b57ccb0d8cd5601cfffa27fec59}} 
+\mbox{\hyperlink{class_display_communication}{Display\+Communication}} {\bfseries display} (TFT\+\_\+\+CS, TFT\+\_\+\+DC, TFT\+\_\+\+MOSI, TFT\+\_\+\+CLK, TFT\+\_\+\+RST)
+\item 
+\mbox{\Hypertarget{main_8cpp_a03cff017370f3b43bf3e8f9668cdb5c9}\label{main_8cpp_a03cff017370f3b43bf3e8f9668cdb5c9}} 
+\mbox{\hyperlink{class_wifi_communication}{Wifi\+Communication}} {\bfseries wifi} (WIFI\+\_\+\+SSID, WIFI\+\_\+\+PASSWORD)
+\item 
+\mbox{\Hypertarget{main_8cpp_a8152d316a070e17093143a74eee387f8}\label{main_8cpp_a8152d316a070e17093143a74eee387f8}} 
+\mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} {\bfseries mqtt} (MQTT\+\_\+\+SERVER, MQTT\+\_\+\+PORT, MQTT\+\_\+\+USERNAME, MQTT\+\_\+\+PASSWORD)
+\item 
+\mbox{\Hypertarget{main_8cpp_afc1d28cfbce795d6ea954ebe725241f5}\label{main_8cpp_afc1d28cfbce795d6ea954ebe725241f5}} 
+float {\bfseries temperature}
+\item 
+\mbox{\Hypertarget{main_8cpp_a6a87b2b0cff24d38b367ccd34843a206}\label{main_8cpp_a6a87b2b0cff24d38b367ccd34843a206}} 
+float {\bfseries humidity}
+\item 
+\mbox{\Hypertarget{main_8cpp_ac870e1249bab4a2a68cc4126761d24ef}\label{main_8cpp_ac870e1249bab4a2a68cc4126761d24ef}} 
+float {\bfseries pressure}
+\item 
+\mbox{\Hypertarget{main_8cpp_a5821f7b0b9c4fab7e6d46433ac45c639}\label{main_8cpp_a5821f7b0b9c4fab7e6d46433ac45c639}} 
+const int {\bfseries sleep\+Time\+In\+Seconds} = 60
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main program file for the weather station project. 
+
+\begin{DoxyAuthor}{Author}
+fjoelnr 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023-\/03-\/22
+\end{DoxyDate}
+
+
+This file contains the main program loop and setup functions for the weather station project, which integrates BME280 sensor data, display, Wi-\/\+Fi, and MQTT communication. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a2770eb0755b5f3e363a64558cb0f1bd9}\label{main_8cpp_a2770eb0755b5f3e363a64558cb0f1bd9}} 
+\index{main.cpp@{main.cpp}!goToDeepSleep@{goToDeepSleep}}
+\index{goToDeepSleep@{goToDeepSleep}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{goToDeepSleep()}{goToDeepSleep()}}
+{\footnotesize\ttfamily void go\+To\+Deep\+Sleep (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{sleep\+Time\+In\+Microseconds }\end{DoxyParamCaption})}
+
+
+
+Puts the ESP32 into deep sleep mode for a specified time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sleep\+Time\+In\+Microseconds} & Time to sleep in microseconds. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,48 @@
+\hypertarget{mqtt__communication_8h_source}{}\doxysection{mqtt\+\_\+communication.\+h}
+\label{mqtt__communication_8h_source}\index{src/network/mqtt\_communication.h@{src/network/mqtt\_communication.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MQTT\_COMMUNICATION\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MQTT\_COMMUNICATION\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <WiFi.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <PubSubClient.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mqtt_communication}{MqttCommunication}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \mbox{\hyperlink{class_mqtt_communication}{MqttCommunication}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mqttServer,\ \textcolor{keywordtype}{int}\ mqttPort,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mqttUsername,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mqttPassword);}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{void}\ setup();}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{bool}\ connect();}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{void}\ disconnect();}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{void}\ publishSensorData(\textcolor{keywordtype}{float}\ temperature,\ \textcolor{keywordtype}{float}\ humidity,\ \textcolor{keywordtype}{float}\ pressure);}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{void}\ publishTemperature(\textcolor{keywordtype}{float}\ temperature);}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{void}\ publishHumidity(\textcolor{keywordtype}{float}\ humidity);}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ publishPressure(\textcolor{keywordtype}{float}\ pressure);}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ subscribeToSensorData();}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ readSensorData(\textcolor{keywordtype}{float}\ \&temperature,\ \textcolor{keywordtype}{float}\ \&humidity,\ \textcolor{keywordtype}{float}\ \&pressure);}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ updateSensorData(String\ topic\_str,\ \textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ processCallbacks();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mqttServer;}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{int}\ mqttPort;}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mqttUsername;}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ mqttPassword;}
+\DoxyCodeLine{00028\ \ \ WiFiClient\ espClient;}
+\DoxyCodeLine{00029\ \ \ PubSubClient\ client;\ \ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{float}\ temperature;}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{float}\ humidity;}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{float}\ pressure;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ reconnect();}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ publish(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ topic,\ \textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_mqtt_communication}{MqttCommunication}}*\ mqttCommPtr;}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ mqttCallback(\textcolor{keywordtype}{char}*\ topic,\ \textcolor{keywordtype}{byte}*\ payload,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ length);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MQTT\_COMMUNICATION\_H}}
+
+\end{DoxyCode}
