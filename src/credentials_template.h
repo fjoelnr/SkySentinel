@@ -1,5 +1,5 @@
 /**
- * @file credentials.h
+ * @file credentials_template.h
  * @author fjoelnr
  * @date 2023-04-04
  * @brief This file contains the Wi-Fi and MQTT credentials.

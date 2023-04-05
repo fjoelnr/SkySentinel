@@ -11,9 +11,20 @@ float humidityHistory[NUM_DATA_POINTS] = {0};
 unsigned long lastUpdateTime = 0;
 const unsigned long updateInterval = 120000; // 2 Minuten
 
+/**
+ * @brief Constructor to create a DisplayCommunication object.
+ * @param csPin Chip select pin for the display.
+ * @param dcPin Data/command pin for the display.
+ * @param mosiPin MOSI pin for the display.
+ * @param sclkPin SCLK pin for the display.
+ * @param rstPin Reset pin for the display.
+ */
 DisplayCommunication::DisplayCommunication(int8_t csPin, int8_t dcPin, int8_t mosiPin, int8_t sclkPin, int8_t rstPin)
     : tft(Adafruit_ST7789(csPin, dcPin, mosiPin, sclkPin, rstPin)) {}
 
+/**
+ * @brief Initializes the display.
+ */
 void DisplayCommunication::begin() {
   tft.init(240, 320);
   tft.setRotation(3);
@@ -55,6 +66,11 @@ void DisplayCommunication::begin() {
 }
 
 
+/**
+ * @brief Updates the history arrays with the latest temperature and humidity values.
+ * @param temperature Current temperature value.
+ * @param humidity Current humidity value.
+ */
 void updateHistoryArrays(float temperature, float humidity) {
   for (int i = NUM_DATA_POINTS - 1; i > 0; i--) {
     temperatureHistory[i] = temperatureHistory[i - 1];
@@ -64,6 +80,12 @@ void updateHistoryArrays(float temperature, float humidity) {
   humidityHistory[0] = humidity;
 }
 
+/**
+ * @brief Displays weather data on the display.
+ * @param temperature Current temperature value.
+ * @param humidity Current humidity value.
+ * @param pressure Current pressure value.
+ */
 void DisplayCommunication::showWeatherData(float temperature, float humidity, float pressure) {
   updateTemperature(temperature);
   updateHumidity(humidity);
@@ -78,6 +100,10 @@ void DisplayCommunication::showWeatherData(float temperature, float humidity, fl
 
 }
 
+/**
+ * @brief Updates the temperature value on the display.
+ * @param temperature Current temperature value.
+ */
 void DisplayCommunication::updateTemperature(float temperature) {
   tft.setTextSize(1);
   tft.setTextColor(CUSTOM_BLUE);
@@ -89,6 +115,10 @@ void DisplayCommunication::updateTemperature(float temperature) {
   lastTemperature = temperature;
 }
 
+/**
+ * @brief Updates the humidity value on the display.
+ * @param humidity Current humidity value.
+ */
 void DisplayCommunication::updateHumidity(float humidity) {
   tft.setTextSize(1);
   tft.setCursor(85, 80);
@@ -100,6 +130,10 @@ void DisplayCommunication::updateHumidity(float humidity) {
   lastHumidity = humidity;
 }
 
+/**
+ * @brief Updates the pressure value on the display.
+ * @param pressure Current pressure value.
+ */
 void DisplayCommunication::updatePressure(float pressure) {
   tft.setTextSize(1);
   tft.setCursor(85, 110);
@@ -111,6 +145,9 @@ void DisplayCommunication::updatePressure(float pressure) {
   lastPressure = pressure;
 }
 
+/**
+ * @brief Draws history graphs for temperature and humidity on the display.
+ */
 void DisplayCommunication::drawHistoryGraphs() {
   int graphWidth = 200;
   int graphHeight = 40;
