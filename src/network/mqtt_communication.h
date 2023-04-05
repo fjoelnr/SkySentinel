@@ -1,3 +1,10 @@
+/**
+ * @file mqtt_communication.h
+ * @author fjoelnr
+ * @date 2023-04-04
+ * @brief This file contains the declaration of the MqttCommunication class for managing MQTT connectivity and operations.
+ */
+
 #ifndef MQTT_COMMUNICATION_H
 #define MQTT_COMMUNICATION_H
 
@@ -30,7 +37,6 @@ private:
   float temperature;
   float humidity;
   float pressure;
-
 
   void reconnect();
   void publish(const char* topic, float value);
