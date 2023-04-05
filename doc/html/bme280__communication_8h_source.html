@@ -76,31 +76,46 @@ $(function() {
   <div class="headertitle"><div class="title">bme280_communication.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BME280_COMMUNICATION_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BME280_COMMUNICATION_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;Adafruit_Sensor.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Adafruit_BME280.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_b_m_e280_communication.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_b_m_e280_communication.html">BME280Communication</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_class" href="class_b_m_e280_communication.html">BME280Communication</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keywordtype">bool</span> begin();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keywordtype">void</span> readSensorData(<span class="keywordtype">float</span> &amp;temperature, <span class="keywordtype">float</span> &amp;humidity, <span class="keywordtype">float</span> &amp;pressure);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keywordtype">float</span> readTemperature();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordtype">float</span> readHumidity();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordtype">float</span> readPressure();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  Adafruit_BME280 bme;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  uint8_t _i2cAddress;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">int</span> _sdaPin;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">int</span> _sclPin;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif </span><span class="comment">// BME280_COMMUNICATION_H</span></div>
-<div class="ttc" id="aclass_b_m_e280_communication_html"><div class="ttname"><a href="class_b_m_e280_communication.html">BME280Communication</a></div><div class="ttdef"><b>Definition:</b> bme280_communication.h:8</div></div>
+<a href="bme280__communication_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef BME280_COMMUNICATION_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define BME280_COMMUNICATION_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;Adafruit_Sensor.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;Adafruit_BME280.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_b_m_e280_communication.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_b_m_e280_communication.html">BME280Communication</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <a class="code hl_function" href="class_b_m_e280_communication.html#af6aaec9c0d792d433d37ace2a18d5802">BME280Communication</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_b_m_e280_communication.html#a7ba298008d9396499ab9b3c2e2a2d516">begin</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_b_m_e280_communication.html#a5aff9fa9f45cfc1d5ce8283f6403cef5">readSensorData</a>(<span class="keywordtype">float</span> &amp;<a class="code hl_variable" href="main_8cpp.html#afc1d28cfbce795d6ea954ebe725241f5">temperature</a>, <span class="keywordtype">float</span> &amp;<a class="code hl_variable" href="main_8cpp.html#a6a87b2b0cff24d38b367ccd34843a206">humidity</a>, <span class="keywordtype">float</span> &amp;<a class="code hl_variable" href="main_8cpp.html#ac870e1249bab4a2a68cc4126761d24ef">pressure</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">float</span> <a class="code hl_function" href="class_b_m_e280_communication.html#a57bfd7a595818a3023d0870c183bbde1">readTemperature</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">float</span> <a class="code hl_function" href="class_b_m_e280_communication.html#a6cd919c9544c54cac7834cf688592764">readHumidity</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">float</span> <a class="code hl_function" href="class_b_m_e280_communication.html#a7723d7f1b0e2436af74c57741b24a79d">readPressure</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  Adafruit_BME280 bme; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  uint8_t _i2cAddress; </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">int</span> _sdaPin;         </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">int</span> _sclPin;         </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif </span><span class="comment">// BME280_COMMUNICATION_H</span></div>
+<div class="ttc" id="aclass_b_m_e280_communication_html"><div class="ttname"><a href="class_b_m_e280_communication.html">BME280Communication</a></div><div class="ttdoc">BME280Communication class for reading data from the BME280 sensor.</div><div class="ttdef"><b>Definition:</b> bme280_communication.h:18</div></div>
+<div class="ttc" id="aclass_b_m_e280_communication_html_a57bfd7a595818a3023d0870c183bbde1"><div class="ttname"><a href="class_b_m_e280_communication.html#a57bfd7a595818a3023d0870c183bbde1">BME280Communication::readTemperature</a></div><div class="ttdeci">float readTemperature()</div><div class="ttdoc">Read the temperature value from the sensor.</div><div class="ttdef"><b>Definition:</b> bme280_communication.cpp:40</div></div>
+<div class="ttc" id="aclass_b_m_e280_communication_html_a5aff9fa9f45cfc1d5ce8283f6403cef5"><div class="ttname"><a href="class_b_m_e280_communication.html#a5aff9fa9f45cfc1d5ce8283f6403cef5">BME280Communication::readSensorData</a></div><div class="ttdeci">void readSensorData(float &amp;temperature, float &amp;humidity, float &amp;pressure)</div><div class="ttdoc">Read sensor data and update the reference values.</div><div class="ttdef"><b>Definition:</b> bme280_communication.cpp:30</div></div>
+<div class="ttc" id="aclass_b_m_e280_communication_html_a6cd919c9544c54cac7834cf688592764"><div class="ttname"><a href="class_b_m_e280_communication.html#a6cd919c9544c54cac7834cf688592764">BME280Communication::readHumidity</a></div><div class="ttdeci">float readHumidity()</div><div class="ttdoc">Read the humidity value from the sensor.</div><div class="ttdef"><b>Definition:</b> bme280_communication.cpp:48</div></div>
+<div class="ttc" id="aclass_b_m_e280_communication_html_a7723d7f1b0e2436af74c57741b24a79d"><div class="ttname"><a href="class_b_m_e280_communication.html#a7723d7f1b0e2436af74c57741b24a79d">BME280Communication::readPressure</a></div><div class="ttdeci">float readPressure()</div><div class="ttdoc">Read the pressure value from the sensor.</div><div class="ttdef"><b>Definition:</b> bme280_communication.cpp:56</div></div>
+<div class="ttc" id="aclass_b_m_e280_communication_html_a7ba298008d9396499ab9b3c2e2a2d516"><div class="ttname"><a href="class_b_m_e280_communication.html#a7ba298008d9396499ab9b3c2e2a2d516">BME280Communication::begin</a></div><div class="ttdeci">bool begin()</div><div class="ttdoc">Initialize the BME280 sensor.</div><div class="ttdef"><b>Definition:</b> bme280_communication.cpp:20</div></div>
+<div class="ttc" id="aclass_b_m_e280_communication_html_af6aaec9c0d792d433d37ace2a18d5802"><div class="ttname"><a href="class_b_m_e280_communication.html#af6aaec9c0d792d433d37ace2a18d5802">BME280Communication::BME280Communication</a></div><div class="ttdeci">BME280Communication()</div><div class="ttdoc">Construct a new BME280Communication object.</div><div class="ttdef"><b>Definition:</b> bme280_communication.cpp:13</div></div>
+<div class="ttc" id="amain_8cpp_html_a6a87b2b0cff24d38b367ccd34843a206"><div class="ttname"><a href="main_8cpp.html#a6a87b2b0cff24d38b367ccd34843a206">humidity</a></div><div class="ttdeci">float humidity</div><div class="ttdef"><b>Definition:</b> main.cpp:37</div></div>
+<div class="ttc" id="amain_8cpp_html_ac870e1249bab4a2a68cc4126761d24ef"><div class="ttname"><a href="main_8cpp.html#ac870e1249bab4a2a68cc4126761d24ef">pressure</a></div><div class="ttdeci">float pressure</div><div class="ttdef"><b>Definition:</b> main.cpp:37</div></div>
+<div class="ttc" id="amain_8cpp_html_afc1d28cfbce795d6ea954ebe725241f5"><div class="ttname"><a href="main_8cpp.html#afc1d28cfbce795d6ea954ebe725241f5">temperature</a></div><div class="ttdeci">float temperature</div><div class="ttdef"><b>Definition:</b> main.cpp:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

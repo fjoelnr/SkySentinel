@@ -84,35 +84,28 @@ $(function() {
 <p>Main program file for the weather station project.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
-<code>#include &quot;sensors/bme280_communication.h&quot;</code><br />
-<code>#include &quot;visualization/display_communication.h&quot;</code><br />
-<code>#include &quot;network/wifi_communication.h&quot;</code><br />
-<code>#include &quot;network/mqtt_communication.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="bme280__communication_8h_source.html">sensors/bme280_communication.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="display__communication_8h_source.html">visualization/display_communication.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="wifi__communication_8h_source.html">network/wifi_communication.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mqtt__communication_8h_source.html">network/mqtt_communication.h</a>&quot;</code><br />
 <code>#include &quot;credentials.h&quot;</code><br />
 <code>#include &quot;esp_sleep.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a05f425917672194cf628897cb46cbf9d"><td class="memItemLeft" align="right" valign="top"><a id="a05f425917672194cf628897cb46cbf9d" name="a05f425917672194cf628897cb46cbf9d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFT_CLK</b>&#160;&#160;&#160;15</td></tr>
+<tr class="memitem:a05f425917672194cf628897cb46cbf9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a05f425917672194cf628897cb46cbf9d">TFT_CLK</a>&#160;&#160;&#160;15</td></tr>
 <tr class="separator:a05f425917672194cf628897cb46cbf9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac108dd4310833bbb4afd1bce1090d55f"><td class="memItemLeft" align="right" valign="top"><a id="ac108dd4310833bbb4afd1bce1090d55f" name="ac108dd4310833bbb4afd1bce1090d55f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFT_MISO</b>&#160;&#160;&#160;8</td></tr>
+<tr class="memitem:ac108dd4310833bbb4afd1bce1090d55f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac108dd4310833bbb4afd1bce1090d55f">TFT_MISO</a>&#160;&#160;&#160;8</td></tr>
 <tr class="separator:ac108dd4310833bbb4afd1bce1090d55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4db639d2d88a53132a529677e6dd795c"><td class="memItemLeft" align="right" valign="top"><a id="a4db639d2d88a53132a529677e6dd795c" name="a4db639d2d88a53132a529677e6dd795c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFT_MOSI</b>&#160;&#160;&#160;9</td></tr>
+<tr class="memitem:a4db639d2d88a53132a529677e6dd795c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4db639d2d88a53132a529677e6dd795c">TFT_MOSI</a>&#160;&#160;&#160;9</td></tr>
 <tr class="separator:a4db639d2d88a53132a529677e6dd795c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f4d46ae101b77df78010c506601c87c"><td class="memItemLeft" align="right" valign="top"><a id="a5f4d46ae101b77df78010c506601c87c" name="a5f4d46ae101b77df78010c506601c87c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFT_CS</b>&#160;&#160;&#160;11</td></tr>
+<tr class="memitem:a5f4d46ae101b77df78010c506601c87c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a>&#160;&#160;&#160;11</td></tr>
 <tr class="separator:a5f4d46ae101b77df78010c506601c87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51529307207622c113ff0d584536be13"><td class="memItemLeft" align="right" valign="top"><a id="a51529307207622c113ff0d584536be13" name="a51529307207622c113ff0d584536be13"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFT_DC</b>&#160;&#160;&#160;13</td></tr>
+<tr class="memitem:a51529307207622c113ff0d584536be13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a51529307207622c113ff0d584536be13">TFT_DC</a>&#160;&#160;&#160;13</td></tr>
 <tr class="separator:a51529307207622c113ff0d584536be13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab40e9918d9141415a47e2a979292309c"><td class="memItemLeft" align="right" valign="top"><a id="ab40e9918d9141415a47e2a979292309c" name="ab40e9918d9141415a47e2a979292309c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFT_RST</b>&#160;&#160;&#160;16</td></tr>
+<tr class="memitem:ab40e9918d9141415a47e2a979292309c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab40e9918d9141415a47e2a979292309c">TFT_RST</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:ab40e9918d9141415a47e2a979292309c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a541b5fc642dbcc81f373d4b866c88f80"><td class="memItemLeft" align="right" valign="top"><a id="a541b5fc642dbcc81f373d4b866c88f80" name="a541b5fc642dbcc81f373d4b866c88f80"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TFT_BL</b>&#160;&#160;&#160;6</td></tr>
+<tr class="memitem:a541b5fc642dbcc81f373d4b866c88f80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a541b5fc642dbcc81f373d4b866c88f80">TFT_BL</a>&#160;&#160;&#160;6</td></tr>
 <tr class="separator:a541b5fc642dbcc81f373d4b866c88f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -120,40 +113,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a2770eb0755b5f3e363a64558cb0f1bd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2770eb0755b5f3e363a64558cb0f1bd9">goToDeepSleep</a> (uint64_t sleepTimeInMicroseconds)</td></tr>
 <tr class="memdesc:a2770eb0755b5f3e363a64558cb0f1bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts the ESP32 into deep sleep mode for a specified time.  <br /></td></tr>
 <tr class="separator:a2770eb0755b5f3e363a64558cb0f1bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top"><a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> ()</td></tr>
-<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the system. <br /></td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the system.  <br /></td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top"><a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
-<tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main program loop. <br /></td></tr>
+<tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
+<tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main program loop.  <br /></td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a4230af91cdee65c7b442014445bb9bde"><td class="memItemLeft" align="right" valign="top"><a id="a4230af91cdee65c7b442014445bb9bde" name="a4230af91cdee65c7b442014445bb9bde"></a>
-<a class="el" href="class_b_m_e280_communication.html">BME280Communication</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bme</b></td></tr>
+<tr class="memitem:a4230af91cdee65c7b442014445bb9bde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_b_m_e280_communication.html">BME280Communication</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4230af91cdee65c7b442014445bb9bde">bme</a></td></tr>
 <tr class="separator:a4230af91cdee65c7b442014445bb9bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42cc4b57ccb0d8cd5601cfffa27fec59"><td class="memItemLeft" align="right" valign="top"><a id="a42cc4b57ccb0d8cd5601cfffa27fec59" name="a42cc4b57ccb0d8cd5601cfffa27fec59"></a>
-<a class="el" href="class_display_communication.html">DisplayCommunication</a>&#160;</td><td class="memItemRight" valign="bottom"><b>display</b> (TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST)</td></tr>
+<tr class="memitem:a42cc4b57ccb0d8cd5601cfffa27fec59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_display_communication.html">DisplayCommunication</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a42cc4b57ccb0d8cd5601cfffa27fec59">display</a> (<a class="el" href="main_8cpp.html#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a>, <a class="el" href="main_8cpp.html#a51529307207622c113ff0d584536be13">TFT_DC</a>, <a class="el" href="main_8cpp.html#a4db639d2d88a53132a529677e6dd795c">TFT_MOSI</a>, <a class="el" href="main_8cpp.html#a05f425917672194cf628897cb46cbf9d">TFT_CLK</a>, <a class="el" href="main_8cpp.html#ab40e9918d9141415a47e2a979292309c">TFT_RST</a>)</td></tr>
 <tr class="separator:a42cc4b57ccb0d8cd5601cfffa27fec59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03cff017370f3b43bf3e8f9668cdb5c9"><td class="memItemLeft" align="right" valign="top"><a id="a03cff017370f3b43bf3e8f9668cdb5c9" name="a03cff017370f3b43bf3e8f9668cdb5c9"></a>
-<a class="el" href="class_wifi_communication.html">WifiCommunication</a>&#160;</td><td class="memItemRight" valign="bottom"><b>wifi</b> (WIFI_SSID, WIFI_PASSWORD)</td></tr>
+<tr class="memitem:a03cff017370f3b43bf3e8f9668cdb5c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wifi_communication.html">WifiCommunication</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a03cff017370f3b43bf3e8f9668cdb5c9">wifi</a> (<a class="el" href="credentials__template_8h.html#a586542b79d00e4db7e1d5a667ae83a2b">WIFI_SSID</a>, <a class="el" href="credentials__template_8h.html#a8685d8aff7e570048090a3a51afceb07">WIFI_PASSWORD</a>)</td></tr>
 <tr class="separator:a03cff017370f3b43bf3e8f9668cdb5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8152d316a070e17093143a74eee387f8"><td class="memItemLeft" align="right" valign="top"><a id="a8152d316a070e17093143a74eee387f8" name="a8152d316a070e17093143a74eee387f8"></a>
-<a class="el" href="class_mqtt_communication.html">MqttCommunication</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mqtt</b> (MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD)</td></tr>
+<tr class="memitem:a8152d316a070e17093143a74eee387f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mqtt_communication.html">MqttCommunication</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8152d316a070e17093143a74eee387f8">mqtt</a> (<a class="el" href="credentials__template_8h.html#a977bd2592e99309a86e7034189e9e62d">MQTT_SERVER</a>, <a class="el" href="credentials__template_8h.html#aa8632baff6bbb5004385998918f1e6bd">MQTT_PORT</a>, <a class="el" href="credentials__template_8h.html#acb6cfe3c2c6027787471e583ad3575c9">MQTT_USERNAME</a>, <a class="el" href="credentials__template_8h.html#a45f4b2d4acbdbc5897952a514f4d6abf">MQTT_PASSWORD</a>)</td></tr>
 <tr class="separator:a8152d316a070e17093143a74eee387f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc1d28cfbce795d6ea954ebe725241f5"><td class="memItemLeft" align="right" valign="top"><a id="afc1d28cfbce795d6ea954ebe725241f5" name="afc1d28cfbce795d6ea954ebe725241f5"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>temperature</b></td></tr>
+<tr class="memitem:afc1d28cfbce795d6ea954ebe725241f5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afc1d28cfbce795d6ea954ebe725241f5">temperature</a></td></tr>
 <tr class="separator:afc1d28cfbce795d6ea954ebe725241f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a87b2b0cff24d38b367ccd34843a206"><td class="memItemLeft" align="right" valign="top"><a id="a6a87b2b0cff24d38b367ccd34843a206" name="a6a87b2b0cff24d38b367ccd34843a206"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>humidity</b></td></tr>
+<tr class="memitem:a6a87b2b0cff24d38b367ccd34843a206"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6a87b2b0cff24d38b367ccd34843a206">humidity</a></td></tr>
 <tr class="separator:a6a87b2b0cff24d38b367ccd34843a206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac870e1249bab4a2a68cc4126761d24ef"><td class="memItemLeft" align="right" valign="top"><a id="ac870e1249bab4a2a68cc4126761d24ef" name="ac870e1249bab4a2a68cc4126761d24ef"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>pressure</b></td></tr>
+<tr class="memitem:ac870e1249bab4a2a68cc4126761d24ef"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac870e1249bab4a2a68cc4126761d24ef">pressure</a></td></tr>
 <tr class="separator:ac870e1249bab4a2a68cc4126761d24ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5821f7b0b9c4fab7e6d46433ac45c639"><td class="memItemLeft" align="right" valign="top"><a id="a5821f7b0b9c4fab7e6d46433ac45c639" name="a5821f7b0b9c4fab7e6d46433ac45c639"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>sleepTimeInSeconds</b> = 60</td></tr>
+<tr class="memitem:a5821f7b0b9c4fab7e6d46433ac45c639"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a5821f7b0b9c4fab7e6d46433ac45c639">sleepTimeInSeconds</a> = 60</td></tr>
 <tr class="separator:a5821f7b0b9c4fab7e6d46433ac45c639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -161,7 +144,106 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>sleepTimeInSecon
 <dl class="section author"><dt>Author</dt><dd>fjoelnr </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-03-22</dd></dl>
 <p>This file contains the main program loop and setup functions for the weather station project, which integrates BME280 sensor data, display, Wi-Fi, and MQTT communication. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a541b5fc642dbcc81f373d4b866c88f80" name="a541b5fc642dbcc81f373d4b866c88f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541b5fc642dbcc81f373d4b866c88f80">&#9670;&#160;</a></span>TFT_BL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_BL&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05f425917672194cf628897cb46cbf9d" name="a05f425917672194cf628897cb46cbf9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05f425917672194cf628897cb46cbf9d">&#9670;&#160;</a></span>TFT_CLK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_CLK&#160;&#160;&#160;15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f4d46ae101b77df78010c506601c87c" name="a5f4d46ae101b77df78010c506601c87c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f4d46ae101b77df78010c506601c87c">&#9670;&#160;</a></span>TFT_CS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_CS&#160;&#160;&#160;11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51529307207622c113ff0d584536be13" name="a51529307207622c113ff0d584536be13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51529307207622c113ff0d584536be13">&#9670;&#160;</a></span>TFT_DC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_DC&#160;&#160;&#160;13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac108dd4310833bbb4afd1bce1090d55f" name="ac108dd4310833bbb4afd1bce1090d55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac108dd4310833bbb4afd1bce1090d55f">&#9670;&#160;</a></span>TFT_MISO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_MISO&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4db639d2d88a53132a529677e6dd795c" name="a4db639d2d88a53132a529677e6dd795c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db639d2d88a53132a529677e6dd795c">&#9670;&#160;</a></span>TFT_MOSI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_MOSI&#160;&#160;&#160;9</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab40e9918d9141415a47e2a979292309c" name="ab40e9918d9141415a47e2a979292309c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab40e9918d9141415a47e2a979292309c">&#9670;&#160;</a></span>TFT_RST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TFT_RST&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a2770eb0755b5f3e363a64558cb0f1bd9" name="a2770eb0755b5f3e363a64558cb0f1bd9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2770eb0755b5f3e363a64558cb0f1bd9">&#9670;&#160;</a></span>goToDeepSleep()</h2>
 
@@ -185,6 +267,229 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>sleepTimeInSecon
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main program loop. </p>
+
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the system. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a4230af91cdee65c7b442014445bb9bde" name="a4230af91cdee65c7b442014445bb9bde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4230af91cdee65c7b442014445bb9bde">&#9670;&#160;</a></span>bme</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_b_m_e280_communication.html">BME280Communication</a> bme</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42cc4b57ccb0d8cd5601cfffa27fec59" name="a42cc4b57ccb0d8cd5601cfffa27fec59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42cc4b57ccb0d8cd5601cfffa27fec59">&#9670;&#160;</a></span>display</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_display_communication.html">DisplayCommunication</a> display(<a class="el" href="main_8cpp.html#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a>, <a class="el" href="main_8cpp.html#a51529307207622c113ff0d584536be13">TFT_DC</a>, <a class="el" href="main_8cpp.html#a4db639d2d88a53132a529677e6dd795c">TFT_MOSI</a>, <a class="el" href="main_8cpp.html#a05f425917672194cf628897cb46cbf9d">TFT_CLK</a>, <a class="el" href="main_8cpp.html#ab40e9918d9141415a47e2a979292309c">TFT_RST</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a5f4d46ae101b77df78010c506601c87c">TFT_CS</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a51529307207622c113ff0d584536be13">TFT_DC</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a4db639d2d88a53132a529677e6dd795c">TFT_MOSI</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a05f425917672194cf628897cb46cbf9d">TFT_CLK</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#ab40e9918d9141415a47e2a979292309c">TFT_RST</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a87b2b0cff24d38b367ccd34843a206" name="a6a87b2b0cff24d38b367ccd34843a206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a87b2b0cff24d38b367ccd34843a206">&#9670;&#160;</a></span>humidity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float humidity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8152d316a070e17093143a74eee387f8" name="a8152d316a070e17093143a74eee387f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8152d316a070e17093143a74eee387f8">&#9670;&#160;</a></span>mqtt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mqtt_communication.html">MqttCommunication</a> mqtt(<a class="el" href="credentials__template_8h.html#a977bd2592e99309a86e7034189e9e62d">MQTT_SERVER</a>, <a class="el" href="credentials__template_8h.html#aa8632baff6bbb5004385998918f1e6bd">MQTT_PORT</a>, <a class="el" href="credentials__template_8h.html#acb6cfe3c2c6027787471e583ad3575c9">MQTT_USERNAME</a>, <a class="el" href="credentials__template_8h.html#a45f4b2d4acbdbc5897952a514f4d6abf">MQTT_PASSWORD</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="credentials__template_8h.html#a977bd2592e99309a86e7034189e9e62d">MQTT_SERVER</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="credentials__template_8h.html#aa8632baff6bbb5004385998918f1e6bd">MQTT_PORT</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="credentials__template_8h.html#acb6cfe3c2c6027787471e583ad3575c9">MQTT_USERNAME</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="credentials__template_8h.html#a45f4b2d4acbdbc5897952a514f4d6abf">MQTT_PASSWORD</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac870e1249bab4a2a68cc4126761d24ef" name="ac870e1249bab4a2a68cc4126761d24ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac870e1249bab4a2a68cc4126761d24ef">&#9670;&#160;</a></span>pressure</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float pressure</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5821f7b0b9c4fab7e6d46433ac45c639" name="a5821f7b0b9c4fab7e6d46433ac45c639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5821f7b0b9c4fab7e6d46433ac45c639">&#9670;&#160;</a></span>sleepTimeInSeconds</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int sleepTimeInSeconds = 60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc1d28cfbce795d6ea954ebe725241f5" name="afc1d28cfbce795d6ea954ebe725241f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1d28cfbce795d6ea954ebe725241f5">&#9670;&#160;</a></span>temperature</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float temperature</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03cff017370f3b43bf3e8f9668cdb5c9" name="a03cff017370f3b43bf3e8f9668cdb5c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03cff017370f3b43bf3e8f9668cdb5c9">&#9670;&#160;</a></span>wifi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_wifi_communication.html">WifiCommunication</a> wifi(<a class="el" href="credentials__template_8h.html#a586542b79d00e4db7e1d5a667ae83a2b">WIFI_SSID</a>, <a class="el" href="credentials__template_8h.html#a8685d8aff7e570048090a3a51afceb07">WIFI_PASSWORD</a>) </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="credentials__template_8h.html#a586542b79d00e4db7e1d5a667ae83a2b">WIFI_SSID</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="credentials__template_8h.html#a8685d8aff7e570048090a3a51afceb07">WIFI_PASSWORD</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

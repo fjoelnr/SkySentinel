@@ -1,26 +1,122 @@
 \hypertarget{class_b_m_e280_communication}{}\doxysection{BME280\+Communication Class Reference}
 \label{class_b_m_e280_communication}\index{BME280Communication@{BME280Communication}}
+
+
+\mbox{\hyperlink{class_b_m_e280_communication}{BME280\+Communication}} class for reading data from the BME280 sensor.  
+
+
+
+
+{\ttfamily \#include $<$bme280\+\_\+communication.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_b_m_e280_communication_af6aaec9c0d792d433d37ace2a18d5802}{BME280\+Communication}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_b_m_e280_communication}{BME280\+Communication}} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_b_m_e280_communication_a7ba298008d9396499ab9b3c2e2a2d516}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the BME280 sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_b_m_e280_communication_a5aff9fa9f45cfc1d5ce8283f6403cef5}{read\+Sensor\+Data}} (float \&\mbox{\hyperlink{main_8cpp_afc1d28cfbce795d6ea954ebe725241f5}{temperature}}, float \&\mbox{\hyperlink{main_8cpp_a6a87b2b0cff24d38b367ccd34843a206}{humidity}}, float \&\mbox{\hyperlink{main_8cpp_ac870e1249bab4a2a68cc4126761d24ef}{pressure}})
+\begin{DoxyCompactList}\small\item\em Read sensor data and update the reference values. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_e280_communication_a57bfd7a595818a3023d0870c183bbde1}{read\+Temperature}} ()
+\begin{DoxyCompactList}\small\item\em Read the temperature value from the sensor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_e280_communication_a6cd919c9544c54cac7834cf688592764}{read\+Humidity}} ()
+\begin{DoxyCompactList}\small\item\em Read the humidity value from the sensor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_b_m_e280_communication_a7723d7f1b0e2436af74c57741b24a79d}{read\+Pressure}} ()
+\begin{DoxyCompactList}\small\item\em Read the pressure value from the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_b_m_e280_communication}{BME280\+Communication}} class for reading data from the BME280 sensor. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_b_m_e280_communication_af6aaec9c0d792d433d37ace2a18d5802}\label{class_b_m_e280_communication_af6aaec9c0d792d433d37ace2a18d5802}} 
+\index{BME280Communication@{BME280Communication}!BME280Communication@{BME280Communication}}
+\index{BME280Communication@{BME280Communication}!BME280Communication@{BME280Communication}}
+\doxysubsubsection{\texorpdfstring{BME280Communication()}{BME280Communication()}}
+{\footnotesize\ttfamily BME280\+Communication\+::\+BME280\+Communication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_b_m_e280_communication}{BME280\+Communication}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_b_m_e280_communication_a7ba298008d9396499ab9b3c2e2a2d516}\label{class_b_m_e280_communication_a7ba298008d9396499ab9b3c2e2a2d516}} 
-bool {\bfseries begin} ()
-\item 
-\mbox{\Hypertarget{class_b_m_e280_communication_a5aff9fa9f45cfc1d5ce8283f6403cef5}\label{class_b_m_e280_communication_a5aff9fa9f45cfc1d5ce8283f6403cef5}} 
-void {\bfseries read\+Sensor\+Data} (float \&temperature, float \&humidity, float \&pressure)
-\item 
-\mbox{\Hypertarget{class_b_m_e280_communication_a57bfd7a595818a3023d0870c183bbde1}\label{class_b_m_e280_communication_a57bfd7a595818a3023d0870c183bbde1}} 
-float {\bfseries read\+Temperature} ()
-\item 
+\index{BME280Communication@{BME280Communication}!begin@{begin}}
+\index{begin@{begin}!BME280Communication@{BME280Communication}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool BME280\+Communication\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the BME280 sensor. 
+
+\begin{DoxyReturn}{Returns}
+true if initialization is successful, false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_b_m_e280_communication_a6cd919c9544c54cac7834cf688592764}\label{class_b_m_e280_communication_a6cd919c9544c54cac7834cf688592764}} 
-float {\bfseries read\+Humidity} ()
-\item 
+\index{BME280Communication@{BME280Communication}!readHumidity@{readHumidity}}
+\index{readHumidity@{readHumidity}!BME280Communication@{BME280Communication}}
+\doxysubsubsection{\texorpdfstring{readHumidity()}{readHumidity()}}
+{\footnotesize\ttfamily float BME280\+Communication\+::read\+Humidity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the humidity value from the sensor. 
+
+\begin{DoxyReturn}{Returns}
+The humidity value in percentage. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_b_m_e280_communication_a7723d7f1b0e2436af74c57741b24a79d}\label{class_b_m_e280_communication_a7723d7f1b0e2436af74c57741b24a79d}} 
-float {\bfseries read\+Pressure} ()
-\end{DoxyCompactItemize}
+\index{BME280Communication@{BME280Communication}!readPressure@{readPressure}}
+\index{readPressure@{readPressure}!BME280Communication@{BME280Communication}}
+\doxysubsubsection{\texorpdfstring{readPressure()}{readPressure()}}
+{\footnotesize\ttfamily float BME280\+Communication\+::read\+Pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the pressure value from the sensor. 
+
+\begin{DoxyReturn}{Returns}
+The pressure value in h\+Pa. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_b_m_e280_communication_a5aff9fa9f45cfc1d5ce8283f6403cef5}\label{class_b_m_e280_communication_a5aff9fa9f45cfc1d5ce8283f6403cef5}} 
+\index{BME280Communication@{BME280Communication}!readSensorData@{readSensorData}}
+\index{readSensorData@{readSensorData}!BME280Communication@{BME280Communication}}
+\doxysubsubsection{\texorpdfstring{readSensorData()}{readSensorData()}}
+{\footnotesize\ttfamily void BME280\+Communication\+::read\+Sensor\+Data (\begin{DoxyParamCaption}\item[{float \&}]{temperature,  }\item[{float \&}]{humidity,  }\item[{float \&}]{pressure }\end{DoxyParamCaption})}
+
+
+
+Read sensor data and update the reference values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em temperature} & Reference to a float variable to store the temperature value. \\
+\hline
+\mbox{\texttt{ out}}  & {\em humidity} & Reference to a float variable to store the humidity value. \\
+\hline
+\mbox{\texttt{ out}}  & {\em pressure} & Reference to a float variable to store the pressure value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_b_m_e280_communication_a57bfd7a595818a3023d0870c183bbde1}\label{class_b_m_e280_communication_a57bfd7a595818a3023d0870c183bbde1}} 
+\index{BME280Communication@{BME280Communication}!readTemperature@{readTemperature}}
+\index{readTemperature@{readTemperature}!BME280Communication@{BME280Communication}}
+\doxysubsubsection{\texorpdfstring{readTemperature()}{readTemperature()}}
+{\footnotesize\ttfamily float BME280\+Communication\+::read\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read the temperature value from the sensor. 
+
+\begin{DoxyReturn}{Returns}
+The temperature value in degrees Celsius. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/sensors/bme280\+\_\+communication.\+h\item 
-src/sensors/bme280\+\_\+communication.\+cpp\end{DoxyCompactItemize}
+src/sensors/\mbox{\hyperlink{bme280__communication_8h}{bme280\+\_\+communication.\+h}}\item 
+src/sensors/\mbox{\hyperlink{bme280__communication_8cpp}{bme280\+\_\+communication.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\hypertarget{mqtt__communication_8cpp}{}\doxysection{src/network/mqtt\+\_\+communication.cpp File Reference}
+\label{mqtt__communication_8cpp}\index{src/network/mqtt\_communication.cpp@{src/network/mqtt\_communication.cpp}}
+{\ttfamily \#include \char`\"{}mqtt\+\_\+communication.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mqtt__communication_8cpp_a6f06b273defaebb581fdf1adc8969f40}{mqtt\+Callback}} (char $\ast$topic, byte $\ast$payload, unsigned int length)
+\begin{DoxyCompactList}\small\item\em MQTT callback function for handling incoming messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} $\ast$ \mbox{\hyperlink{mqtt__communication_8cpp_a053142f2a19c57f8b35939381038a36a}{mqtt\+Comm\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Pointer to an instance of \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mqtt__communication_8cpp_a6f06b273defaebb581fdf1adc8969f40}\label{mqtt__communication_8cpp_a6f06b273defaebb581fdf1adc8969f40}} 
+\index{mqtt\_communication.cpp@{mqtt\_communication.cpp}!mqttCallback@{mqttCallback}}
+\index{mqttCallback@{mqttCallback}!mqtt\_communication.cpp@{mqtt\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{mqttCallback()}{mqttCallback()}}
+{\footnotesize\ttfamily void mqtt\+Callback (\begin{DoxyParamCaption}\item[{char $\ast$}]{topic,  }\item[{byte $\ast$}]{payload,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+
+
+MQTT callback function for handling incoming messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em topic} & The topic on which the message was received. \\
+\hline
+{\em payload} & The payload of the received message. \\
+\hline
+{\em length} & The length of the received payload. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mqtt__communication_8cpp_a053142f2a19c57f8b35939381038a36a}\label{mqtt__communication_8cpp_a053142f2a19c57f8b35939381038a36a}} 
+\index{mqtt\_communication.cpp@{mqtt\_communication.cpp}!mqttCommPtr@{mqttCommPtr}}
+\index{mqttCommPtr@{mqttCommPtr}!mqtt\_communication.cpp@{mqtt\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{mqttCommPtr}{mqttCommPtr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}}$\ast$ mqtt\+Comm\+Ptr}
+
+
+
+Pointer to an instance of \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} class. 
+

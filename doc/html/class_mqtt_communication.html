@@ -75,49 +75,437 @@ $(function() {
   <div class="headertitle"><div class="title">MqttCommunication Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_mqtt_communication.html" title="The MqttCommunication class provides methods for connecting to the MQTT broker, subscribing to topics...">MqttCommunication</a> class provides methods for connecting to the MQTT broker, subscribing to topics, and publishing data.  
+ <a href="class_mqtt_communication.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="mqtt__communication_8h_source.html">mqtt_communication.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a22660e6ea28b3b9ea83c7682516810bc"><td class="memItemLeft" align="right" valign="top"><a id="a22660e6ea28b3b9ea83c7682516810bc" name="a22660e6ea28b3b9ea83c7682516810bc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>MqttCommunication</b> (const char *mqttServer, int mqttPort, const char *mqttUsername, const char *mqttPassword)</td></tr>
+<tr class="memitem:a22660e6ea28b3b9ea83c7682516810bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a22660e6ea28b3b9ea83c7682516810bc">MqttCommunication</a> (const char *mqttServer, int mqttPort, const char *mqttUsername, const char *mqttPassword)</td></tr>
+<tr class="memdesc:a22660e6ea28b3b9ea83c7682516810bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_mqtt_communication.html" title="The MqttCommunication class provides methods for connecting to the MQTT broker, subscribing to topics...">MqttCommunication</a> object.  <br /></td></tr>
 <tr class="separator:a22660e6ea28b3b9ea83c7682516810bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c7c2f51eb6f7ac45c1f9577df75be48"><td class="memItemLeft" align="right" valign="top"><a id="a2c7c2f51eb6f7ac45c1f9577df75be48" name="a2c7c2f51eb6f7ac45c1f9577df75be48"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> ()</td></tr>
+<tr class="memitem:a2c7c2f51eb6f7ac45c1f9577df75be48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a2c7c2f51eb6f7ac45c1f9577df75be48">setup</a> ()</td></tr>
+<tr class="memdesc:a2c7c2f51eb6f7ac45c1f9577df75be48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the MQTT client with server and port information.  <br /></td></tr>
 <tr class="separator:a2c7c2f51eb6f7ac45c1f9577df75be48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80037151a531764df08d8e30a3957d3a"><td class="memItemLeft" align="right" valign="top"><a id="a80037151a531764df08d8e30a3957d3a" name="a80037151a531764df08d8e30a3957d3a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>connect</b> ()</td></tr>
+<tr class="memitem:a80037151a531764df08d8e30a3957d3a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a80037151a531764df08d8e30a3957d3a">connect</a> ()</td></tr>
+<tr class="memdesc:a80037151a531764df08d8e30a3957d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to the MQTT broker, if not already connected.  <br /></td></tr>
 <tr class="separator:a80037151a531764df08d8e30a3957d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e254d53958e6a6e645c257049fc60b1"><td class="memItemLeft" align="right" valign="top"><a id="a4e254d53958e6a6e645c257049fc60b1" name="a4e254d53958e6a6e645c257049fc60b1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>disconnect</b> ()</td></tr>
+<tr class="memitem:a4e254d53958e6a6e645c257049fc60b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a4e254d53958e6a6e645c257049fc60b1">disconnect</a> ()</td></tr>
+<tr class="memdesc:a4e254d53958e6a6e645c257049fc60b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnect from the MQTT broker, if connected.  <br /></td></tr>
 <tr class="separator:a4e254d53958e6a6e645c257049fc60b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf58198b118eb366a885bc6733440afb"><td class="memItemLeft" align="right" valign="top"><a id="acf58198b118eb366a885bc6733440afb" name="acf58198b118eb366a885bc6733440afb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>publishSensorData</b> (float temperature, float humidity, float pressure)</td></tr>
+<tr class="memitem:acf58198b118eb366a885bc6733440afb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#acf58198b118eb366a885bc6733440afb">publishSensorData</a> (float temperature, float humidity, float pressure)</td></tr>
+<tr class="memdesc:acf58198b118eb366a885bc6733440afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publish sensor data for temperature, humidity, and pressure.  <br /></td></tr>
 <tr class="separator:acf58198b118eb366a885bc6733440afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a0b8e988201e278e5c0fcd304ad964d"><td class="memItemLeft" align="right" valign="top"><a id="a6a0b8e988201e278e5c0fcd304ad964d" name="a6a0b8e988201e278e5c0fcd304ad964d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>publishTemperature</b> (float temperature)</td></tr>
+<tr class="memitem:a6a0b8e988201e278e5c0fcd304ad964d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a6a0b8e988201e278e5c0fcd304ad964d">publishTemperature</a> (float temperature)</td></tr>
+<tr class="memdesc:a6a0b8e988201e278e5c0fcd304ad964d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publish temperature data.  <br /></td></tr>
 <tr class="separator:a6a0b8e988201e278e5c0fcd304ad964d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab637de67501e83d45b00b22bf1ee79ce"><td class="memItemLeft" align="right" valign="top"><a id="ab637de67501e83d45b00b22bf1ee79ce" name="ab637de67501e83d45b00b22bf1ee79ce"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>publishHumidity</b> (float humidity)</td></tr>
+<tr class="memitem:ab637de67501e83d45b00b22bf1ee79ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#ab637de67501e83d45b00b22bf1ee79ce">publishHumidity</a> (float humidity)</td></tr>
+<tr class="memdesc:ab637de67501e83d45b00b22bf1ee79ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publish humidity data.  <br /></td></tr>
 <tr class="separator:ab637de67501e83d45b00b22bf1ee79ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25bcc47329165338ff0f9690f3873079"><td class="memItemLeft" align="right" valign="top"><a id="a25bcc47329165338ff0f9690f3873079" name="a25bcc47329165338ff0f9690f3873079"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>publishPressure</b> (float pressure)</td></tr>
+<tr class="memitem:a25bcc47329165338ff0f9690f3873079"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a25bcc47329165338ff0f9690f3873079">publishPressure</a> (float pressure)</td></tr>
+<tr class="memdesc:a25bcc47329165338ff0f9690f3873079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publish pressure data.  <br /></td></tr>
 <tr class="separator:a25bcc47329165338ff0f9690f3873079"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa38c005c7da6c3061aeabf6a12bd3588"><td class="memItemLeft" align="right" valign="top"><a id="aa38c005c7da6c3061aeabf6a12bd3588" name="aa38c005c7da6c3061aeabf6a12bd3588"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>subscribeToSensorData</b> ()</td></tr>
+<tr class="memitem:aa38c005c7da6c3061aeabf6a12bd3588"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#aa38c005c7da6c3061aeabf6a12bd3588">subscribeToSensorData</a> ()</td></tr>
+<tr class="memdesc:aa38c005c7da6c3061aeabf6a12bd3588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to sensor data topics.  <br /></td></tr>
 <tr class="separator:aa38c005c7da6c3061aeabf6a12bd3588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af571c6794ed905b4155ce37e8812c352"><td class="memItemLeft" align="right" valign="top"><a id="af571c6794ed905b4155ce37e8812c352" name="af571c6794ed905b4155ce37e8812c352"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>readSensorData</b> (float &amp;temperature, float &amp;humidity, float &amp;pressure)</td></tr>
+<tr class="memitem:af571c6794ed905b4155ce37e8812c352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#af571c6794ed905b4155ce37e8812c352">readSensorData</a> (float &amp;temperature, float &amp;humidity, float &amp;pressure)</td></tr>
+<tr class="memdesc:af571c6794ed905b4155ce37e8812c352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current sensor data for temperature, humidity, and pressure.  <br /></td></tr>
 <tr class="separator:af571c6794ed905b4155ce37e8812c352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e433bdaa5b08a1cd1b9ed4a5780d903"><td class="memItemLeft" align="right" valign="top"><a id="a5e433bdaa5b08a1cd1b9ed4a5780d903" name="a5e433bdaa5b08a1cd1b9ed4a5780d903"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateSensorData</b> (String topic_str, float value)</td></tr>
+<tr class="memitem:a5e433bdaa5b08a1cd1b9ed4a5780d903"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a5e433bdaa5b08a1cd1b9ed4a5780d903">updateSensorData</a> (String topic_str, float value)</td></tr>
+<tr class="memdesc:a5e433bdaa5b08a1cd1b9ed4a5780d903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the sensor data based on the received MQTT message.  <br /></td></tr>
 <tr class="separator:a5e433bdaa5b08a1cd1b9ed4a5780d903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60a735d30cdb7867f1b71e4731ce4759"><td class="memItemLeft" align="right" valign="top"><a id="a60a735d30cdb7867f1b71e4731ce4759" name="a60a735d30cdb7867f1b71e4731ce4759"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>processCallbacks</b> ()</td></tr>
+<tr class="memitem:a60a735d30cdb7867f1b71e4731ce4759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mqtt_communication.html#a60a735d30cdb7867f1b71e4731ce4759">processCallbacks</a> ()</td></tr>
+<tr class="memdesc:a60a735d30cdb7867f1b71e4731ce4759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process MQTT callbacks.  <br /></td></tr>
 <tr class="separator:a60a735d30cdb7867f1b71e4731ce4759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_mqtt_communication.html" title="The MqttCommunication class provides methods for connecting to the MQTT broker, subscribing to topics...">MqttCommunication</a> class provides methods for connecting to the MQTT broker, subscribing to topics, and publishing data. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a22660e6ea28b3b9ea83c7682516810bc" name="a22660e6ea28b3b9ea83c7682516810bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22660e6ea28b3b9ea83c7682516810bc">&#9670;&#160;</a></span>MqttCommunication()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MqttCommunication::MqttCommunication </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mqttServer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mqttPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mqttUsername</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mqttPassword</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="class_mqtt_communication.html" title="The MqttCommunication class provides methods for connecting to the MQTT broker, subscribing to topics...">MqttCommunication</a> object. </p>
+<p>Constructor for the <a class="el" href="class_mqtt_communication.html" title="The MqttCommunication class provides methods for connecting to the MQTT broker, subscribing to topics...">MqttCommunication</a> class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mqttServer</td><td>The MQTT server address. </td></tr>
+    <tr><td class="paramname">mqttPort</td><td>The MQTT server port. </td></tr>
+    <tr><td class="paramname">mqttUsername</td><td>The MQTT username for authentication. </td></tr>
+    <tr><td class="paramname">mqttPassword</td><td>The MQTT password for authentication.</td></tr>
+    <tr><td class="paramname">mqttServer</td><td>The MQTT server address. </td></tr>
+    <tr><td class="paramname">mqttPort</td><td>The MQTT server port. </td></tr>
+    <tr><td class="paramname">mqttUsername</td><td>The MQTT username. </td></tr>
+    <tr><td class="paramname">mqttPassword</td><td>The MQTT password. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a80037151a531764df08d8e30a3957d3a" name="a80037151a531764df08d8e30a3957d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80037151a531764df08d8e30a3957d3a">&#9670;&#160;</a></span>connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MqttCommunication::connect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect to the MQTT broker, if not already connected. </p>
+<p>Connects to the MQTT server and sets up subscriptions and callbacks.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if connected, false otherwise.</dd>
+<dd>
+True if the client is connected to the MQTT server, otherwise false. </dd></dl>
+
+</div>
+</div>
+<a id="a4e254d53958e6a6e645c257049fc60b1" name="a4e254d53958e6a6e645c257049fc60b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e254d53958e6a6e645c257049fc60b1">&#9670;&#160;</a></span>disconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::disconnect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disconnect from the MQTT broker, if connected. </p>
+<p>Disconnects from the MQTT server. </p>
+
+</div>
+</div>
+<a id="a60a735d30cdb7867f1b71e4731ce4759" name="a60a735d30cdb7867f1b71e4731ce4759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60a735d30cdb7867f1b71e4731ce4759">&#9670;&#160;</a></span>processCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::processCallbacks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process MQTT callbacks. </p>
+<p>Processes MQTT callbacks by calling the PubSubClient loop function. </p>
+
+</div>
+</div>
+<a id="ab637de67501e83d45b00b22bf1ee79ce" name="ab637de67501e83d45b00b22bf1ee79ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab637de67501e83d45b00b22bf1ee79ce">&#9670;&#160;</a></span>publishHumidity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::publishHumidity </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>humidity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Publish humidity data. </p>
+<p>Publishes the humidity value to the corresponding topic.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">humidity</td><td>The humidity value to publish.</td></tr>
+    <tr><td class="paramname">humidity</td><td>The humidity value to be published. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a25bcc47329165338ff0f9690f3873079" name="a25bcc47329165338ff0f9690f3873079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25bcc47329165338ff0f9690f3873079">&#9670;&#160;</a></span>publishPressure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::publishPressure </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pressure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Publish pressure data. </p>
+<p>Publishes the pressure value to the corresponding topic.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pressure</td><td>The pressure value to publish.</td></tr>
+    <tr><td class="paramname">pressure</td><td>The pressure value to be published. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acf58198b118eb366a885bc6733440afb" name="acf58198b118eb366a885bc6733440afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf58198b118eb366a885bc6733440afb">&#9670;&#160;</a></span>publishSensorData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::publishSensorData </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>temperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>humidity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pressure</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Publish sensor data for temperature, humidity, and pressure. </p>
+<p>Publishes sensor data to their respective topics.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature</td><td>The temperature value to publish. </td></tr>
+    <tr><td class="paramname">humidity</td><td>The humidity value to publish. </td></tr>
+    <tr><td class="paramname">pressure</td><td>The pressure value to publish.</td></tr>
+    <tr><td class="paramname">temperature</td><td>The temperature value to be published. </td></tr>
+    <tr><td class="paramname">humidity</td><td>The humidity value to be published. </td></tr>
+    <tr><td class="paramname">pressure</td><td>The pressure value to be published. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a0b8e988201e278e5c0fcd304ad964d" name="a6a0b8e988201e278e5c0fcd304ad964d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0b8e988201e278e5c0fcd304ad964d">&#9670;&#160;</a></span>publishTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::publishTemperature </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>temperature</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Publish temperature data. </p>
+<p>Publishes the temperature value to the corresponding topic.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature</td><td>The temperature value to publish.</td></tr>
+    <tr><td class="paramname">temperature</td><td>The temperature value to be published. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af571c6794ed905b4155ce37e8812c352" name="af571c6794ed905b4155ce37e8812c352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af571c6794ed905b4155ce37e8812c352">&#9670;&#160;</a></span>readSensorData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::readSensorData </td>
+          <td>(</td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>temperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>humidity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float &amp;&#160;</td>
+          <td class="paramname"><em>pressure</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the current sensor data for temperature, humidity, and pressure. </p>
+<p>Reads the latest sensor data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature</td><td>Reference to a float to store the temperature value. </td></tr>
+    <tr><td class="paramname">humidity</td><td>Reference to a float to store the humidity value. </td></tr>
+    <tr><td class="paramname">pressure</td><td>Reference to a float to store the pressure value.</td></tr>
+    <tr><td class="paramname">temperature</td><td>Reference to store the latest temperature value. </td></tr>
+    <tr><td class="paramname">humidity</td><td>Reference to store the latest humidity value. </td></tr>
+    <tr><td class="paramname">pressure</td><td>Reference to store the latest pressure value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c7c2f51eb6f7ac45c1f9577df75be48" name="a2c7c2f51eb6f7ac45c1f9577df75be48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7c2f51eb6f7ac45c1f9577df75be48">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set up the MQTT client with server and port information. </p>
+<p>Sets up the MQTT client. </p>
+
+</div>
+</div>
+<a id="aa38c005c7da6c3061aeabf6a12bd3588" name="aa38c005c7da6c3061aeabf6a12bd3588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38c005c7da6c3061aeabf6a12bd3588">&#9670;&#160;</a></span>subscribeToSensorData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::subscribeToSensorData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Subscribe to sensor data topics. </p>
+<p>Subscribes to sensor data topics. </p>
+
+</div>
+</div>
+<a id="a5e433bdaa5b08a1cd1b9ed4a5780d903" name="a5e433bdaa5b08a1cd1b9ed4a5780d903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e433bdaa5b08a1cd1b9ed4a5780d903">&#9670;&#160;</a></span>updateSensorData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MqttCommunication::updateSensorData </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>topic_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the sensor data based on the received MQTT message. </p>
+<p>Updates the stored sensor data based on the received topic and value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">topic_str</td><td>The MQTT topic string. </td></tr>
+    <tr><td class="paramname">value</td><td>The value received from the MQTT message.</td></tr>
+    <tr><td class="paramname">topic_str</td><td>The topic on which the data was received. </td></tr>
+    <tr><td class="paramname">value</td><td>The new sensor value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/network/<a class="el" href="mqtt__communication_8h_source.html">mqtt_communication.h</a></li>
-<li>src/network/mqtt_communication.cpp</li>
+<li>src/network/<a class="el" href="mqtt__communication_8cpp.html">mqtt_communication.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

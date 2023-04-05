@@ -1,6 +1,6 @@
 \hypertarget{display__communication_8h_source}{}\doxysection{display\+\_\+communication.\+h}
 \label{display__communication_8h_source}\index{src/visualization/display\_communication.h@{src/visualization/display\_communication.h}}
-
+\mbox{\hyperlink{display__communication_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DISPLAY\_COMMUNICATION\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DISPLAY\_COMMUNICATION\_H}}
@@ -8,24 +8,29 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Adafruit\_GFX.h>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Adafruit\_ST7789.h>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_display_communication}{DisplayCommunication}}\ \{}
-\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00010\ \ \ \mbox{\hyperlink{class_display_communication}{DisplayCommunication}}(int8\_t\ csPin,\ int8\_t\ dcPin,\ int8\_t\ mosiPin,\ int8\_t\ sclkPin,\ int8\_t\ rstPin);}
-\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{void}\ begin();}
-\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{void}\ showWeatherData(\textcolor{keywordtype}{float}\ temperature,\ \textcolor{keywordtype}{float}\ humidity,\ \textcolor{keywordtype}{float}\ pressure);}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{void}\ updateTemperature(\textcolor{keywordtype}{float}\ temperature);}
-\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{void}\ updateHumidity(\textcolor{keywordtype}{float}\ humidity);}
-\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ updatePressure(\textcolor{keywordtype}{float}\ pressure);}
-\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ drawHistoryGraphs();}
-\DoxyCodeLine{00019\ \ \ Adafruit\_ST7789\ tft;}
-\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{float}\ lastTemperature\ =\ 0;}
-\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{float}\ lastHumidity\ =\ 0;}
-\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{float}\ lastPressure\ =\ 0;}
-\DoxyCodeLine{00023\ \};}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DISPLAY\_COMMUNICATION\_H}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_display_communication}{DisplayCommunication}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{class_display_communication}{DisplayCommunication}}(int8\_t\ csPin,\ int8\_t\ dcPin,\ int8\_t\ mosiPin,\ int8\_t\ sclkPin,\ int8\_t\ rstPin);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_display_communication_a333e27f541bf4abc7ee15f4737693e55}{begin}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_display_communication_a31d542ea5a155dd8f139a1eb9bd9a6af}{showWeatherData}}(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8cpp_afc1d28cfbce795d6ea954ebe725241f5}{temperature}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8cpp_a6a87b2b0cff24d38b367ccd34843a206}{humidity}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8cpp_ac870e1249bab4a2a68cc4126761d24ef}{pressure}});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ updateTemperature(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8cpp_afc1d28cfbce795d6ea954ebe725241f5}{temperature}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ updateHumidity(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8cpp_a6a87b2b0cff24d38b367ccd34843a206}{humidity}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ updatePressure(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{main_8cpp_ac870e1249bab4a2a68cc4126761d24ef}{pressure}});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ drawHistoryGraphs();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ Adafruit\_ST7789\ tft;\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{float}\ lastTemperature;\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{float}\ lastHumidity;\ }
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{float}\ lastPressure;\ }
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DISPLAY\_COMMUNICATION\_H}}
 
 \end{DoxyCode}

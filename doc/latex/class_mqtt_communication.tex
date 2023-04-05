@@ -1,47 +1,275 @@
 \hypertarget{class_mqtt_communication}{}\doxysection{Mqtt\+Communication Class Reference}
 \label{class_mqtt_communication}\index{MqttCommunication@{MqttCommunication}}
+
+
+The \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} class provides methods for connecting to the MQTT broker, subscribing to topics, and publishing data.  
+
+
+
+
+{\ttfamily \#include $<$mqtt\+\_\+communication.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_mqtt_communication_a22660e6ea28b3b9ea83c7682516810bc}{Mqtt\+Communication}} (const char $\ast$mqtt\+Server, int mqtt\+Port, const char $\ast$mqtt\+Username, const char $\ast$mqtt\+Password)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_a2c7c2f51eb6f7ac45c1f9577df75be48}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Set up the MQTT client with server and port information. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mqtt_communication_a80037151a531764df08d8e30a3957d3a}{connect}} ()
+\begin{DoxyCompactList}\small\item\em Connect to the MQTT broker, if not already connected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_a4e254d53958e6a6e645c257049fc60b1}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect from the MQTT broker, if connected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_acf58198b118eb366a885bc6733440afb}{publish\+Sensor\+Data}} (float temperature, float humidity, float pressure)
+\begin{DoxyCompactList}\small\item\em Publish sensor data for temperature, humidity, and pressure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_a6a0b8e988201e278e5c0fcd304ad964d}{publish\+Temperature}} (float temperature)
+\begin{DoxyCompactList}\small\item\em Publish temperature data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_ab637de67501e83d45b00b22bf1ee79ce}{publish\+Humidity}} (float humidity)
+\begin{DoxyCompactList}\small\item\em Publish humidity data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_a25bcc47329165338ff0f9690f3873079}{publish\+Pressure}} (float pressure)
+\begin{DoxyCompactList}\small\item\em Publish pressure data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_aa38c005c7da6c3061aeabf6a12bd3588}{subscribe\+To\+Sensor\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Subscribe to sensor data topics. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_af571c6794ed905b4155ce37e8812c352}{read\+Sensor\+Data}} (float \&temperature, float \&humidity, float \&pressure)
+\begin{DoxyCompactList}\small\item\em Read the current sensor data for temperature, humidity, and pressure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_a5e433bdaa5b08a1cd1b9ed4a5780d903}{update\+Sensor\+Data}} (String topic\+\_\+str, float value)
+\begin{DoxyCompactList}\small\item\em Update the sensor data based on the received MQTT message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mqtt_communication_a60a735d30cdb7867f1b71e4731ce4759}{process\+Callbacks}} ()
+\begin{DoxyCompactList}\small\item\em Process MQTT callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} class provides methods for connecting to the MQTT broker, subscribing to topics, and publishing data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_mqtt_communication_a22660e6ea28b3b9ea83c7682516810bc}\label{class_mqtt_communication_a22660e6ea28b3b9ea83c7682516810bc}} 
-{\bfseries Mqtt\+Communication} (const char $\ast$mqtt\+Server, int mqtt\+Port, const char $\ast$mqtt\+Username, const char $\ast$mqtt\+Password)
-\item 
-\mbox{\Hypertarget{class_mqtt_communication_a2c7c2f51eb6f7ac45c1f9577df75be48}\label{class_mqtt_communication_a2c7c2f51eb6f7ac45c1f9577df75be48}} 
-void {\bfseries setup} ()
-\item 
+\index{MqttCommunication@{MqttCommunication}!MqttCommunication@{MqttCommunication}}
+\index{MqttCommunication@{MqttCommunication}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{MqttCommunication()}{MqttCommunication()}}
+{\footnotesize\ttfamily Mqtt\+Communication\+::\+Mqtt\+Communication (\begin{DoxyParamCaption}\item[{const char $\ast$}]{mqtt\+Server,  }\item[{int}]{mqtt\+Port,  }\item[{const char $\ast$}]{mqtt\+Username,  }\item[{const char $\ast$}]{mqtt\+Password }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} object. 
+
+Constructor for the \mbox{\hyperlink{class_mqtt_communication}{Mqtt\+Communication}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mqtt\+Server} & The MQTT server address. \\
+\hline
+{\em mqtt\+Port} & The MQTT server port. \\
+\hline
+{\em mqtt\+Username} & The MQTT username for authentication. \\
+\hline
+{\em mqtt\+Password} & The MQTT password for authentication.\\
+\hline
+{\em mqtt\+Server} & The MQTT server address. \\
+\hline
+{\em mqtt\+Port} & The MQTT server port. \\
+\hline
+{\em mqtt\+Username} & The MQTT username. \\
+\hline
+{\em mqtt\+Password} & The MQTT password. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_mqtt_communication_a80037151a531764df08d8e30a3957d3a}\label{class_mqtt_communication_a80037151a531764df08d8e30a3957d3a}} 
-bool {\bfseries connect} ()
-\item 
+\index{MqttCommunication@{MqttCommunication}!connect@{connect}}
+\index{connect@{connect}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool Mqtt\+Communication\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Connect to the MQTT broker, if not already connected. 
+
+Connects to the MQTT server and sets up subscriptions and callbacks.
+
+\begin{DoxyReturn}{Returns}
+true if connected, false otherwise.
+
+True if the client is connected to the MQTT server, otherwise false. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_mqtt_communication_a4e254d53958e6a6e645c257049fc60b1}\label{class_mqtt_communication_a4e254d53958e6a6e645c257049fc60b1}} 
-void {\bfseries disconnect} ()
-\item 
-\mbox{\Hypertarget{class_mqtt_communication_acf58198b118eb366a885bc6733440afb}\label{class_mqtt_communication_acf58198b118eb366a885bc6733440afb}} 
-void {\bfseries publish\+Sensor\+Data} (float temperature, float humidity, float pressure)
-\item 
-\mbox{\Hypertarget{class_mqtt_communication_a6a0b8e988201e278e5c0fcd304ad964d}\label{class_mqtt_communication_a6a0b8e988201e278e5c0fcd304ad964d}} 
-void {\bfseries publish\+Temperature} (float temperature)
-\item 
-\mbox{\Hypertarget{class_mqtt_communication_ab637de67501e83d45b00b22bf1ee79ce}\label{class_mqtt_communication_ab637de67501e83d45b00b22bf1ee79ce}} 
-void {\bfseries publish\+Humidity} (float humidity)
-\item 
+\index{MqttCommunication@{MqttCommunication}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect from the MQTT broker, if connected. 
+
+Disconnects from the MQTT server. \mbox{\Hypertarget{class_mqtt_communication_a60a735d30cdb7867f1b71e4731ce4759}\label{class_mqtt_communication_a60a735d30cdb7867f1b71e4731ce4759}} 
+\index{MqttCommunication@{MqttCommunication}!processCallbacks@{processCallbacks}}
+\index{processCallbacks@{processCallbacks}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{processCallbacks()}{processCallbacks()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::process\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Process MQTT callbacks. 
+
+Processes MQTT callbacks by calling the Pub\+Sub\+Client loop function. \mbox{\Hypertarget{class_mqtt_communication_ab637de67501e83d45b00b22bf1ee79ce}\label{class_mqtt_communication_ab637de67501e83d45b00b22bf1ee79ce}} 
+\index{MqttCommunication@{MqttCommunication}!publishHumidity@{publishHumidity}}
+\index{publishHumidity@{publishHumidity}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{publishHumidity()}{publishHumidity()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::publish\+Humidity (\begin{DoxyParamCaption}\item[{float}]{humidity }\end{DoxyParamCaption})}
+
+
+
+Publish humidity data. 
+
+Publishes the humidity value to the corresponding topic.
+
+
+\begin{DoxyParams}{Parameters}
+{\em humidity} & The humidity value to publish.\\
+\hline
+{\em humidity} & The humidity value to be published. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_mqtt_communication_a25bcc47329165338ff0f9690f3873079}\label{class_mqtt_communication_a25bcc47329165338ff0f9690f3873079}} 
-void {\bfseries publish\+Pressure} (float pressure)
-\item 
-\mbox{\Hypertarget{class_mqtt_communication_aa38c005c7da6c3061aeabf6a12bd3588}\label{class_mqtt_communication_aa38c005c7da6c3061aeabf6a12bd3588}} 
-void {\bfseries subscribe\+To\+Sensor\+Data} ()
-\item 
+\index{MqttCommunication@{MqttCommunication}!publishPressure@{publishPressure}}
+\index{publishPressure@{publishPressure}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{publishPressure()}{publishPressure()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::publish\+Pressure (\begin{DoxyParamCaption}\item[{float}]{pressure }\end{DoxyParamCaption})}
+
+
+
+Publish pressure data. 
+
+Publishes the pressure value to the corresponding topic.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pressure} & The pressure value to publish.\\
+\hline
+{\em pressure} & The pressure value to be published. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mqtt_communication_acf58198b118eb366a885bc6733440afb}\label{class_mqtt_communication_acf58198b118eb366a885bc6733440afb}} 
+\index{MqttCommunication@{MqttCommunication}!publishSensorData@{publishSensorData}}
+\index{publishSensorData@{publishSensorData}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{publishSensorData()}{publishSensorData()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::publish\+Sensor\+Data (\begin{DoxyParamCaption}\item[{float}]{temperature,  }\item[{float}]{humidity,  }\item[{float}]{pressure }\end{DoxyParamCaption})}
+
+
+
+Publish sensor data for temperature, humidity, and pressure. 
+
+Publishes sensor data to their respective topics.
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & The temperature value to publish. \\
+\hline
+{\em humidity} & The humidity value to publish. \\
+\hline
+{\em pressure} & The pressure value to publish.\\
+\hline
+{\em temperature} & The temperature value to be published. \\
+\hline
+{\em humidity} & The humidity value to be published. \\
+\hline
+{\em pressure} & The pressure value to be published. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mqtt_communication_a6a0b8e988201e278e5c0fcd304ad964d}\label{class_mqtt_communication_a6a0b8e988201e278e5c0fcd304ad964d}} 
+\index{MqttCommunication@{MqttCommunication}!publishTemperature@{publishTemperature}}
+\index{publishTemperature@{publishTemperature}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{publishTemperature()}{publishTemperature()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::publish\+Temperature (\begin{DoxyParamCaption}\item[{float}]{temperature }\end{DoxyParamCaption})}
+
+
+
+Publish temperature data. 
+
+Publishes the temperature value to the corresponding topic.
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & The temperature value to publish.\\
+\hline
+{\em temperature} & The temperature value to be published. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_mqtt_communication_af571c6794ed905b4155ce37e8812c352}\label{class_mqtt_communication_af571c6794ed905b4155ce37e8812c352}} 
-void {\bfseries read\+Sensor\+Data} (float \&temperature, float \&humidity, float \&pressure)
-\item 
-\mbox{\Hypertarget{class_mqtt_communication_a5e433bdaa5b08a1cd1b9ed4a5780d903}\label{class_mqtt_communication_a5e433bdaa5b08a1cd1b9ed4a5780d903}} 
-void {\bfseries update\+Sensor\+Data} (String topic\+\_\+str, float value)
-\item 
-\mbox{\Hypertarget{class_mqtt_communication_a60a735d30cdb7867f1b71e4731ce4759}\label{class_mqtt_communication_a60a735d30cdb7867f1b71e4731ce4759}} 
-void {\bfseries process\+Callbacks} ()
-\end{DoxyCompactItemize}
+\index{MqttCommunication@{MqttCommunication}!readSensorData@{readSensorData}}
+\index{readSensorData@{readSensorData}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{readSensorData()}{readSensorData()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::read\+Sensor\+Data (\begin{DoxyParamCaption}\item[{float \&}]{temperature,  }\item[{float \&}]{humidity,  }\item[{float \&}]{pressure }\end{DoxyParamCaption})}
+
+
+
+Read the current sensor data for temperature, humidity, and pressure. 
+
+Reads the latest sensor data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Reference to a float to store the temperature value. \\
+\hline
+{\em humidity} & Reference to a float to store the humidity value. \\
+\hline
+{\em pressure} & Reference to a float to store the pressure value.\\
+\hline
+{\em temperature} & Reference to store the latest temperature value. \\
+\hline
+{\em humidity} & Reference to store the latest humidity value. \\
+\hline
+{\em pressure} & Reference to store the latest pressure value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mqtt_communication_a2c7c2f51eb6f7ac45c1f9577df75be48}\label{class_mqtt_communication_a2c7c2f51eb6f7ac45c1f9577df75be48}} 
+\index{MqttCommunication@{MqttCommunication}!setup@{setup}}
+\index{setup@{setup}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set up the MQTT client with server and port information. 
+
+Sets up the MQTT client. \mbox{\Hypertarget{class_mqtt_communication_aa38c005c7da6c3061aeabf6a12bd3588}\label{class_mqtt_communication_aa38c005c7da6c3061aeabf6a12bd3588}} 
+\index{MqttCommunication@{MqttCommunication}!subscribeToSensorData@{subscribeToSensorData}}
+\index{subscribeToSensorData@{subscribeToSensorData}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{subscribeToSensorData()}{subscribeToSensorData()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::subscribe\+To\+Sensor\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Subscribe to sensor data topics. 
+
+Subscribes to sensor data topics. \mbox{\Hypertarget{class_mqtt_communication_a5e433bdaa5b08a1cd1b9ed4a5780d903}\label{class_mqtt_communication_a5e433bdaa5b08a1cd1b9ed4a5780d903}} 
+\index{MqttCommunication@{MqttCommunication}!updateSensorData@{updateSensorData}}
+\index{updateSensorData@{updateSensorData}!MqttCommunication@{MqttCommunication}}
+\doxysubsubsection{\texorpdfstring{updateSensorData()}{updateSensorData()}}
+{\footnotesize\ttfamily void Mqtt\+Communication\+::update\+Sensor\+Data (\begin{DoxyParamCaption}\item[{String}]{topic\+\_\+str,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Update the sensor data based on the received MQTT message. 
+
+Updates the stored sensor data based on the received topic and value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em topic\+\_\+str} & The MQTT topic string. \\
+\hline
+{\em value} & The value received from the MQTT message.\\
+\hline
+{\em topic\+\_\+str} & The topic on which the data was received. \\
+\hline
+{\em value} & The new sensor value. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/network/mqtt\+\_\+communication.\+h\item 
-src/network/mqtt\+\_\+communication.\+cpp\end{DoxyCompactItemize}
+src/network/\mbox{\hyperlink{mqtt__communication_8h}{mqtt\+\_\+communication.\+h}}\item 
+src/network/\mbox{\hyperlink{mqtt__communication_8cpp}{mqtt\+\_\+communication.\+cpp}}\end{DoxyCompactItemize}

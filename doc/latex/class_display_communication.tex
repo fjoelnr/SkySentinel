@@ -1,20 +1,87 @@
 \hypertarget{class_display_communication}{}\doxysection{Display\+Communication Class Reference}
 \label{class_display_communication}\index{DisplayCommunication@{DisplayCommunication}}
+
+
+Class to handle display communication for showing weather data.  
+
+
+
+
+{\ttfamily \#include $<$display\+\_\+communication.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_display_communication_a4bddd260dad51df2e24fb00edc563f6d}{Display\+Communication}} (int8\+\_\+t cs\+Pin, int8\+\_\+t dc\+Pin, int8\+\_\+t mosi\+Pin, int8\+\_\+t sclk\+Pin, int8\+\_\+t rst\+Pin)
+\begin{DoxyCompactList}\small\item\em Constructor to create a \mbox{\hyperlink{class_display_communication}{Display\+Communication}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_display_communication_a333e27f541bf4abc7ee15f4737693e55}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_display_communication_a31d542ea5a155dd8f139a1eb9bd9a6af}{show\+Weather\+Data}} (float \mbox{\hyperlink{main_8cpp_afc1d28cfbce795d6ea954ebe725241f5}{temperature}}, float \mbox{\hyperlink{main_8cpp_a6a87b2b0cff24d38b367ccd34843a206}{humidity}}, float \mbox{\hyperlink{main_8cpp_ac870e1249bab4a2a68cc4126761d24ef}{pressure}})
+\begin{DoxyCompactList}\small\item\em Displays weather data on the display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle display communication for showing weather data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_display_communication_a4bddd260dad51df2e24fb00edc563f6d}\label{class_display_communication_a4bddd260dad51df2e24fb00edc563f6d}} 
-{\bfseries Display\+Communication} (int8\+\_\+t cs\+Pin, int8\+\_\+t dc\+Pin, int8\+\_\+t mosi\+Pin, int8\+\_\+t sclk\+Pin, int8\+\_\+t rst\+Pin)
-\item 
+\index{DisplayCommunication@{DisplayCommunication}!DisplayCommunication@{DisplayCommunication}}
+\index{DisplayCommunication@{DisplayCommunication}!DisplayCommunication@{DisplayCommunication}}
+\doxysubsubsection{\texorpdfstring{DisplayCommunication()}{DisplayCommunication()}}
+{\footnotesize\ttfamily Display\+Communication\+::\+Display\+Communication (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{cs\+Pin,  }\item[{int8\+\_\+t}]{dc\+Pin,  }\item[{int8\+\_\+t}]{mosi\+Pin,  }\item[{int8\+\_\+t}]{sclk\+Pin,  }\item[{int8\+\_\+t}]{rst\+Pin }\end{DoxyParamCaption})}
+
+
+
+Constructor to create a \mbox{\hyperlink{class_display_communication}{Display\+Communication}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cs\+Pin} & Chip select pin for the display. \\
+\hline
+{\em dc\+Pin} & Data/command pin for the display. \\
+\hline
+{\em mosi\+Pin} & MOSI pin for the display. \\
+\hline
+{\em sclk\+Pin} & SCLK pin for the display. \\
+\hline
+{\em rst\+Pin} & Reset pin for the display. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_display_communication_a333e27f541bf4abc7ee15f4737693e55}\label{class_display_communication_a333e27f541bf4abc7ee15f4737693e55}} 
-void {\bfseries begin} ()
-\item 
+\index{DisplayCommunication@{DisplayCommunication}!begin@{begin}}
+\index{begin@{begin}!DisplayCommunication@{DisplayCommunication}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void Display\+Communication\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the display. 
+
 \mbox{\Hypertarget{class_display_communication_a31d542ea5a155dd8f139a1eb9bd9a6af}\label{class_display_communication_a31d542ea5a155dd8f139a1eb9bd9a6af}} 
-void {\bfseries show\+Weather\+Data} (float temperature, float humidity, float pressure)
-\end{DoxyCompactItemize}
+\index{DisplayCommunication@{DisplayCommunication}!showWeatherData@{showWeatherData}}
+\index{showWeatherData@{showWeatherData}!DisplayCommunication@{DisplayCommunication}}
+\doxysubsubsection{\texorpdfstring{showWeatherData()}{showWeatherData()}}
+{\footnotesize\ttfamily void Display\+Communication\+::show\+Weather\+Data (\begin{DoxyParamCaption}\item[{float}]{temperature,  }\item[{float}]{humidity,  }\item[{float}]{pressure }\end{DoxyParamCaption})}
+
+
+
+Displays weather data on the display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Current temperature value. \\
+\hline
+{\em humidity} & Current humidity value. \\
+\hline
+{\em pressure} & Current pressure value. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/visualization/display\+\_\+communication.\+h\item 
-src/visualization/display\+\_\+communication.\+cpp\end{DoxyCompactItemize}
+src/visualization/\mbox{\hyperlink{display__communication_8h}{display\+\_\+communication.\+h}}\item 
+src/visualization/\mbox{\hyperlink{display__communication_8cpp}{display\+\_\+communication.\+cpp}}\end{DoxyCompactItemize}

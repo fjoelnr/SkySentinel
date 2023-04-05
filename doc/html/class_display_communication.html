@@ -75,22 +75,152 @@ $(function() {
   <div class="headertitle"><div class="title">DisplayCommunication Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class to handle display communication for showing weather data.  
+ <a href="class_display_communication.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="display__communication_8h_source.html">display_communication.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4bddd260dad51df2e24fb00edc563f6d"><td class="memItemLeft" align="right" valign="top"><a id="a4bddd260dad51df2e24fb00edc563f6d" name="a4bddd260dad51df2e24fb00edc563f6d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DisplayCommunication</b> (int8_t csPin, int8_t dcPin, int8_t mosiPin, int8_t sclkPin, int8_t rstPin)</td></tr>
+<tr class="memitem:a4bddd260dad51df2e24fb00edc563f6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_communication.html#a4bddd260dad51df2e24fb00edc563f6d">DisplayCommunication</a> (int8_t csPin, int8_t dcPin, int8_t mosiPin, int8_t sclkPin, int8_t rstPin)</td></tr>
+<tr class="memdesc:a4bddd260dad51df2e24fb00edc563f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to create a <a class="el" href="class_display_communication.html" title="Class to handle display communication for showing weather data.">DisplayCommunication</a> object.  <br /></td></tr>
 <tr class="separator:a4bddd260dad51df2e24fb00edc563f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a333e27f541bf4abc7ee15f4737693e55"><td class="memItemLeft" align="right" valign="top"><a id="a333e27f541bf4abc7ee15f4737693e55" name="a333e27f541bf4abc7ee15f4737693e55"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:a333e27f541bf4abc7ee15f4737693e55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_communication.html#a333e27f541bf4abc7ee15f4737693e55">begin</a> ()</td></tr>
+<tr class="memdesc:a333e27f541bf4abc7ee15f4737693e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the display.  <br /></td></tr>
 <tr class="separator:a333e27f541bf4abc7ee15f4737693e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31d542ea5a155dd8f139a1eb9bd9a6af"><td class="memItemLeft" align="right" valign="top"><a id="a31d542ea5a155dd8f139a1eb9bd9a6af" name="a31d542ea5a155dd8f139a1eb9bd9a6af"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>showWeatherData</b> (float temperature, float humidity, float pressure)</td></tr>
+<tr class="memitem:a31d542ea5a155dd8f139a1eb9bd9a6af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_display_communication.html#a31d542ea5a155dd8f139a1eb9bd9a6af">showWeatherData</a> (float <a class="el" href="main_8cpp.html#afc1d28cfbce795d6ea954ebe725241f5">temperature</a>, float <a class="el" href="main_8cpp.html#a6a87b2b0cff24d38b367ccd34843a206">humidity</a>, float <a class="el" href="main_8cpp.html#ac870e1249bab4a2a68cc4126761d24ef">pressure</a>)</td></tr>
+<tr class="memdesc:a31d542ea5a155dd8f139a1eb9bd9a6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays weather data on the display.  <br /></td></tr>
 <tr class="separator:a31d542ea5a155dd8f139a1eb9bd9a6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class to handle display communication for showing weather data. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4bddd260dad51df2e24fb00edc563f6d" name="a4bddd260dad51df2e24fb00edc563f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bddd260dad51df2e24fb00edc563f6d">&#9670;&#160;</a></span>DisplayCommunication()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DisplayCommunication::DisplayCommunication </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>csPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>dcPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>mosiPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>sclkPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>rstPin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor to create a <a class="el" href="class_display_communication.html" title="Class to handle display communication for showing weather data.">DisplayCommunication</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">csPin</td><td>Chip select pin for the display. </td></tr>
+    <tr><td class="paramname">dcPin</td><td>Data/command pin for the display. </td></tr>
+    <tr><td class="paramname">mosiPin</td><td>MOSI pin for the display. </td></tr>
+    <tr><td class="paramname">sclkPin</td><td>SCLK pin for the display. </td></tr>
+    <tr><td class="paramname">rstPin</td><td>Reset pin for the display. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a333e27f541bf4abc7ee15f4737693e55" name="a333e27f541bf4abc7ee15f4737693e55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333e27f541bf4abc7ee15f4737693e55">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayCommunication::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the display. </p>
+
+</div>
+</div>
+<a id="a31d542ea5a155dd8f139a1eb9bd9a6af" name="a31d542ea5a155dd8f139a1eb9bd9a6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31d542ea5a155dd8f139a1eb9bd9a6af">&#9670;&#160;</a></span>showWeatherData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplayCommunication::showWeatherData </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>temperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>humidity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>pressure</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays weather data on the display. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">temperature</td><td>Current temperature value. </td></tr>
+    <tr><td class="paramname">humidity</td><td>Current humidity value. </td></tr>
+    <tr><td class="paramname">pressure</td><td>Current pressure value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/visualization/<a class="el" href="display__communication_8h_source.html">display_communication.h</a></li>
-<li>src/visualization/display_communication.cpp</li>
+<li>src/visualization/<a class="el" href="display__communication_8cpp.html">display_communication.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
