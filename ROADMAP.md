@@ -38,6 +38,24 @@ This roadmap outlines the planned features and improvements for the Modular Weat
    a. Integrate with ioBroker
    b. Integrate with Home Assistant
 
+8. **Enhanced data visualization:**
+   - Implement more sophisticated graphics or animations for displaying weather data
+
+9. **Data analysis and forecasting:**
+   - Integrate machine learning or statistical models for recognizing patterns in weather data and predicting future weather conditions
+
+10. **Alerts and notifications:**
+   - Develop a notification system to inform users of extreme weather conditions or rapid changes in weather
+
+11. **Energy efficiency:**
+   - Optimize energy consumption of the weather station, e.g. by using solar panels or implementing energy-saving modes
+
+12. **Remote access:**
+   - Develop a web or smartphone app to allow users to access weather data from anywhere
+
+13. **Expanded connectivity:**
+   - Integrate other communication protocols or cloud platforms to improve interoperability and data transmission options
+
 ### Deutsch
 
 Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das modulare Wetterstationsprojekt.
@@ -67,7 +85,7 @@ Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das mod
    b. Erstellen einer Web-Benutzeroberfläche zur Anzeige von Daten und Verwaltung der Wetterstation
    c. Integration von InfluxDB zur Speicherung und Verwaltung von Wetterdaten
    d. Integration von Grafana zur Datenvisualisierung und Analyse
-   e. Implementierung einer Alarmierungsfunktion für bestimmte Wetter
+   e. Implementierung einer Alarmierungsfunktion für bestimmte Wetterbedingungen
 
 6. **OTA (Over-the-Air)-Funktionalität:**
    - Implementierung von OTA-Updates für die Firmware der Wetterstation
@@ -75,6 +93,24 @@ Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das mod
 7. **Integration in Hausautomatisierungssysteme:**
    a. Integration in ioBroker
    b. Integration in Home Assistant
+
+8. **Erweiterte Datenvisualisierung:**
+   - Implementierung von anspruchsvolleren Grafiken oder Animationen zur Anzeige von Wetterdaten
+
+9. **Datenanalyse und Vorhersage:**
+   - Integration von maschinellem Lernen oder statistischen Modellen zur Erkennung von Mustern in Wetterdaten und Vorhersage zukünftiger Wetterbedingungen
+
+10. **Alarme und Benachrichtigungen:**
+   - Entwicklung eines Benachrichtigungssystems, um Benutzer über extreme Wetterbedingungen oder schnelle Wetteränderungen zu informieren
+
+11. **Energieeffizienz:**
+   - Optimierung des Energieverbrauchs der Wetterstation, z. B. durch den Einsatz von Solarzellen oder die Implementierung von Energiesparmodi
+
+12. **Fernzugriff:**
+   - Entwicklung einer Web- oder Smartphone-App, die es Benutzern ermöglicht, von überall auf Wetterdaten zuzugreifen
+
+13. **Erweiterte Konnektivität:**
+   - Integration anderer Kommunikationsprotokolle oder Cloud-Plattformen zur Verbesserung der Interoperabilität und Datenübertragungsoptionen
 
 ### Status
 
@@ -92,3 +128,12 @@ Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das mod
 | [ ]          | 10       | OTA Updates                                       | Over-the-Air (OTA) updates (not started)                           | Over-the-Air (OTA) Updates (nicht begonnen)                    | Medium     |
 | [ ]          | 11       | Additional Sensors Integration                   | Integration of additional sensors (not started)                    | Integration zusätzlicher Sensoren (nicht begonnen)             | High       |
 | [ ]          | 12       | Integration into Home Automation Systems          | Integration into ioBroker and Home Assistant (not started)        | Integration in ioBroker und Home Assistant (nicht begonnen)    | Medium     |
+| [ ]          | 13       | Enhanced Data Visualization                       | Implement more sophisticated graphics or animations for displaying weather data (not started) | Implementierung anspruchsvollerer Grafiken oder Animationen zur Anzeige von Wetterdaten (nicht begonnen) | Medium     |
+| [ ]          | 14       | Data Analysis and Forecasting                     | Integrate machine learning or statistical models for recognizing patterns in weather data and predicting future weather conditions (not started) | Integration von maschinellem Lernen oder statistischen Modellen zur Erkennung von Mustern in Wetterdaten und Vorhersage zukünftiger Wetterbedingungen (nicht begonnen) | High       |
+| [ ]          | 15       | Alerts and Notifications                          | Develop a notification system to inform users of extreme weather conditions or rapid changes in weather (not started) | Entwicklung eines Benachrichtigungssystems, um Benutzer über extreme Wetterbedingungen oder schnelle Wetteränderungen zu informieren (nicht begonnen) | Medium     |
+| [ ]          | 16       | Energy Efficiency                                 | Optimize energy consumption of the weather station, e.g. by using solar panels or implementing energy-saving modes (not started) | Optimierung des Energieverbrauchs der Wetterstation, z. B. durch den Einsatz von Solarzellen oder die Implementierung von Energiesparmodi (nicht begonnen) | High       |
+| [ ]          | 17       | Remote Access                                     | Develop a web or smartphone app to allow users to access weather data from anywhere (not started) | Entwicklung einer Web- oder Smartphone-App, die es Benutzern ermöglicht, von überall auf Wetterdaten zuzugreifen (nicht begonnen) | Medium     |
+| [ ]          | 18       | Enhanced Connectivity                             | Integrate other communication protocols or cloud platforms to improve interoperability and data transmission options (not started) | Integration anderer Kommunikationsprotokolle oder Cloud-Plattformen zur Verbesserung der Interoperabilität und Datenübertragungsoptionen (nicht begonnen) | High       |
+
+
+

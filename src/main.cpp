@@ -11,6 +11,10 @@
  */
 
 #include <Arduino.h>
+#include <WiFi.h>
+#include <ESPAsyncWebServer.h>
+#include <FS.h>
+#include <LITTLEFS.h>
 #include "sensors/bme280_communication.h"
 #include "visualization/display_communication.h"
 #include "network/wifi_communication.h"
@@ -27,17 +31,28 @@
 #define TFT_RST 16
 #define TFT_BL 6
 
+
 // Sensor and communication objects
 BME280Communication bme;
 DisplayCommunication display(TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST);
 WifiCommunication wifi(WIFI_SSID, WIFI_PASSWORD);
 MqttCommunication mqtt(MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD);
+AsyncWebServer server(80);
 
 // Variables to store sensor data
 float temperature, humidity, pressure;
 
 // Time between measurements and data transfers in seconds
 const int sleepTimeInSeconds = 60;
+
+
+void handleRoot(AsyncWebServerRequest *request) {
+  File file = LittleFS.open("/index.html", "r");
+  request->send(LittleFS, "/index.html", "text/html");
+  file.close();
+}
+
+
 
 /**
  * @brief Puts the ESP32 into deep sleep mode for a specified time.
@@ -58,6 +73,15 @@ void setup() {
 
   #ifdef ESP32_SAOLA
     bme.begin();
+
+    // Initialize LittleFS
+    if (!LittleFS.begin()) {
+      Serial.println("An error occurred while mounting LittleFS");
+      LittleFS.format();
+      ESP.restart();
+    }
+
+
   #endif
 
   // Setup Wi-Fi
@@ -75,6 +99,13 @@ void setup() {
     display.begin();
     mqtt.connect(); // Subscriptions are now set up in the connect() method
   #endif
+
+  #ifdef ESP32_SAOLA
+    // Start the server
+    server.begin();
+    server.on("/", HTTP_GET, handleRoot);
+  #endif
+
 }
 
 /**
@@ -100,7 +131,8 @@ void loop() {
     }
 
     // Go to Deep Sleep Mode and wait for the defined time
-    goToDeepSleep(sleepTimeInSeconds * 1000000);
+    // goToDeepSleep(sleepTimeInSeconds * 1000000);
+    delay(sleepTimeInSeconds *500);
 
   #endif
 
