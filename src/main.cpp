@@ -15,6 +15,7 @@
 #include "visualization/display_communication.h"
 #include "network/wifi_communication.h"
 #include "network/mqtt_communication.h"
+#include "data_processing/data_processing.h"
 #include "credentials.h"
 #include "esp_sleep.h"
 
@@ -85,7 +86,7 @@ void loop() {
   #ifdef ESP32_SAOLA
     if (mqtt.connect()) {
       bme.readSensorData(temperature, humidity, pressure);
-
+      processSensorData(millis(), temperature, humidity, pressure);
       mqtt.publishSensorData(temperature, humidity, pressure);
 
       Serial.print("MQTT publish: BME280 Temperature: ");
