@@ -29,13 +29,21 @@ void WifiCommunication::connect() {
   if (WiFi.status() != WL_CONNECTED) {
     Serial.print("Connecting to " + String(ssid) + " ");
     WiFi.begin(ssid, password);
-    while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-    Serial.println("Connection Failed! Rebooting...");
-    delay(5000);
-    ESP.restart();
-  }
-    Serial.println("");
-    Serial.println("WiFi connected with IP address: " + WiFi.localIP().toString());
+    unsigned long startAttemptTime = millis();
+
+    while (WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < 10000) { // 10 Sekunden Timeout
+      delay(500);
+      Serial.print(".");
+    }
+
+    if (WiFi.status() != WL_CONNECTED) {
+      Serial.println("Connection Failed! Rebooting...");
+      delay(5000);
+      ESP.restart();
+    } else {
+      Serial.println("");
+      Serial.println("WiFi connected with IP address: " + WiFi.localIP().toString());
+    }
   }
 }
 

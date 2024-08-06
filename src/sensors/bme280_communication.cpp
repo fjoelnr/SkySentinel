@@ -18,7 +18,11 @@ BME280Communication::BME280Communication() {
  * @return true if initialization is successful, false otherwise.
  */
 bool BME280Communication::begin() {
-  return bme.begin();
+  if (!bme.begin()) {
+    Serial.println("Could not find a valid BME280 sensor, check wiring!");
+    return false;
+  }
+  return true;
 }
 
 /**

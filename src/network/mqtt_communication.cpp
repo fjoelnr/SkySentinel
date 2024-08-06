@@ -86,7 +86,8 @@ void MqttCommunication::publishPressure(float pressure) {
  * @brief Reconnects to the MQTT server if the connection is lost.
  */
 void MqttCommunication::reconnect() {
-  while (!client.connected()) {
+  unsigned long startAttemptTime = millis();
+  while (!client.connected() && millis() - startAttemptTime < 10000) { // 10 Sekunden Timeout
     Serial.print("Attempting MQTT connection...");
     #ifdef ESP32_SAOLA
       if (client.connect("ESP32Saola", mqttUsername, mqttPassword)) {
@@ -101,6 +102,12 @@ void MqttCommunication::reconnect() {
       Serial.println(" try again in 5 seconds");
       delay(5000);
     }
+  }
+
+  if (!client.connected()) {
+    Serial.println("MQTT connection failed after multiple attempts. Rebooting...");
+    delay(5000);
+    ESP.restart();
   }
 }
 

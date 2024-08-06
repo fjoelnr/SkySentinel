@@ -58,10 +58,14 @@ void setup() {
   delay(1000);
 
   #ifdef ESP32_SAOLA
-    bme.begin();
+    if (!bme.begin()) {
+      Serial.println("BME280 initialization failed. Rebooting...");
+      delay(5000);
+      ESP.restart();
+    }
   #endif
 
-  // Setup Wi-Fi
+   // Setup Wi-Fi
   Serial.print("Setup Wi-Fi...");
   wifi.setup();
   wifi.connect();
