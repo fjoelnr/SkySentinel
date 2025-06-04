@@ -20,7 +20,8 @@ const unsigned long updateInterval = 120000; // 2 Minuten
  * @param rstPin Reset pin for the display.
  */
 DisplayCommunication::DisplayCommunication(int8_t csPin, int8_t dcPin, int8_t mosiPin, int8_t sclkPin, int8_t rstPin)
-    : tft(Adafruit_ST7789(csPin, dcPin, mosiPin, sclkPin, rstPin)) {}
+    : tft(Adafruit_ST7789(csPin, dcPin, mosiPin, sclkPin, rstPin)),
+      lastTemperature(0), lastHumidity(0), lastPressure(0) {}
 
 /**
  * @brief Initializes the display.
