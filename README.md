@@ -15,6 +15,9 @@ This project is designed to be easily extended and customized to suit your needs
 * MQTT data transmission
 * Easy integration with other sensors and data platforms
 * Compatible with ESP32-S2-Saola-1 and ESP32-S2-Kaluga-1 development boards
+* Built-in web interface with REST API
+* OTA updates via ArduinoOTA
+* Docker setup for InfluxDB and Grafana
 
 For the planned features and improvements, please refer to the [Roadmap](ROADMAP.md).
 
