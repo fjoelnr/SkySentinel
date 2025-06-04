@@ -77,18 +77,17 @@ Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das mod
    b. Integration in Home Assistant
 
 ### Status
-
-| Status       | Priority | Task                                              | Description (English)                                            | Beschreibung (Deutsch)                                          | Complexity |
-|--------------|----------|---------------------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------|------------|
-| [x]          | 1        | BME280 Sensor Communication                      | Integration of BME280 sensor communication (completed)           | Integration der BME280-Sensor-Kommunikation (abgeschlossen)   | Medium     |
-| [x]          | 2        | LyraP-LCD32 Display Integration                  | Integration of the display on the LyraP-LCD32 (completed)        | Integration der Anzeige auf dem LyraP-LCD32 (abgeschlossen)    | Medium     |
-| [x]          | 3        | MQTT Communication                                | Implementation of MQTT communication (completed)                  | Implementierung von MQTT-Kommunikation (abgeschlossen)         | Medium     |
-| [x]          | 4        | Deep Sleep and Wake-Up                            | Implementation of Deep Sleep and Wake-Up for energy efficiency (partially completed) | Implementierung von Deep Sleep und Wake-Up für Energieeffizienz (teilweise abgeschlossen) | Medium     |
-| [x]          | 5        | Display Optimization                              | Optimization of the display (partially completed)                          | Optimierung der Anzeige (teilweise abgeschlossen)                       | Medium     |
-| [x]          | 6        | Firmware Merge for ESP32-Saola-1 and ESP32-Kaluga-1 | Merging the firmware for ESP32-Saola-1 and ESP32-Kaluga-1 (completed) | Zusammenführung der Firmware für ESP32-Saola-1 und ESP32-Kaluga-1 (abgeschlossen) | High       |
-| [-]          | 7        | Web App on ESP32                                  | Minimalistic web app on ESP32 for live data and configuration (not started) | Minimalistische Webanwendung auf dem ESP32 für Live-Daten und Konfiguration (nicht begonnen) | Medium     |
-| [ ]          | 8        | API Development                                   | Development of an API (not started)                               | Entwicklung einer API (nicht begonnen)                          | Medium     |
-| [ ]          | 9        | Server-based Web App (Raspberry Pi example)       | Server-based web app with Docker integration (not started)        | Serverbasierte Webanwendung mit Docker-Integration (nicht begonnen) | High       |
-| [ ]          | 10       | OTA Updates                                       | Over-the-Air (OTA) updates (not started)                           | Over-the-Air (OTA) Updates (nicht begonnen)                    | Medium     |
-| [ ]          | 11       | Additional Sensors Integration                   | Integration of additional sensors (not started)                    | Integration zusätzlicher Sensoren (nicht begonnen)             | High       |
-| [ ]          | 12       | Integration into Home Automation Systems          | Integration into ioBroker and Home Assistant (not started)        | Integration in ioBroker und Home Assistant (nicht begonnen)    | Medium     |
+| Status | Priority | Task | Description (English) | Beschreibung (Deutsch) | Complexity |
+|-------|----------|------|-----------------------|------------------------|------------|
+| [x] | 1 | BME280 Sensor Communication | Integration of BME280 sensor communication (completed) | Integration der BME280-Sensor-Kommunikation (abgeschlossen) | Medium |
+| [x] | 2 | LyraP-LCD32 Display Integration | Integration of the display on the LyraP-LCD32 (completed) | Integration der Anzeige auf dem LyraP-LCD32 (abgeschlossen) | Medium |
+| [x] | 3 | MQTT Communication | Implementation of MQTT communication (completed) | Implementierung von MQTT-Kommunikation (abgeschlossen) | Medium |
+| [x] | 4 | Deep Sleep and Wake-Up | Implementation of Deep Sleep and Wake-Up for energy efficiency (partially completed) | Implementierung von Deep Sleep und Wake-Up für Energieeffizienz (teilweise abgeschlossen) | Medium |
+| [x] | 5 | Display Optimization | Optimization of the display (partially completed) | Optimierung der Anzeige (teilweise abgeschlossen) | Medium |
+| [x] | 6 | Firmware Merge for ESP32-Saola-1 and ESP32-Kaluga-1 | Merging the firmware for both boards (completed) | Zusammenführung der Firmware für ESP32-Saola-1 und ESP32-Kaluga-1 (abgeschlossen) | High |
+| [-] | 7 | Web App on ESP32 | Minimalistic web app for live data and configuration (not started) | Minimalistische Webanwendung für Live-Daten und Konfiguration (nicht begonnen) | Medium |
+| [ ] | 8 | API Development | Development of an API (not started) | Entwicklung einer API (nicht begonnen) | Medium |
+| [ ] | 9 | Server-based Web App (Raspberry Pi example) | Server-based web app with Docker integration (not started) | Serverbasierte Webanwendung mit Docker-Integration (nicht begonnen) | High |
+| [ ] | 10 | OTA Updates | Over-the-Air updates (not started) | OTA-Updates (nicht begonnen) | Medium |
+| [ ] | 11 | Additional Sensors Integration | Integration of additional sensors (not started) | Integration zusätzlicher Sensoren (nicht begonnen) | High |
+| [ ] | 12 | Integration into Home Automation Systems | Integration into ioBroker and Home Assistant (not started) | Integration in ioBroker und Home Assistant (nicht begonnen) | Medium |

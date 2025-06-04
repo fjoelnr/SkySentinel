@@ -20,11 +20,13 @@ For the planned features and improvements, please refer to the [Roadmap](ROADMAP
 
 ### Getting Started
 
-To get started with the Modular Weather Station for ESP32, follow the instructions in the [setup guide](SETUP.md).
+1. Clone this repository.
+2. Copy `src/credentials_template.h` to `src/credentials.h` and fill in your Wi-Fi and MQTT details.
+3. Follow the steps in the [setup guide](SETUP.md) to build and upload the firmware.
 
 ### Documentation
 
-Detailed documentation for the project can be found in the [docs](docs/) directory.
+Detailed API documentation generated with Doxygen is available in the [doc](doc/) directory. Run `doxygen doxygen_config` to rebuild the documentation.
 
 ### Contributing
 
@@ -58,11 +60,13 @@ Für die geplanten Funktionen und Verbesserungen, bitte schauen Sie in die [Road
 
 ### Erste Schritte
 
-Um mit der modularen Wetterstation für ESP32 zu beginnen, folgen Sie den Anweisungen im [Einrichtungsleitfaden](SETUP.md).
+1. Klonen Sie dieses Repository.
+2. Kopieren Sie `src/credentials_template.h` nach `src/credentials.h` und tragen Sie Ihre WLAN- und MQTT-Daten ein.
+3. Folgen Sie dem [Einrichtungsleitfaden](SETUP.md), um die Firmware zu bauen und auf das Board zu flashen.
 
 ### Dokumentation
 
-Detaillierte Dokumentation zum Projekt finden Sie im [Dokumentationsverzeichnis](docs/).
+Die mit Doxygen erzeugte API-Dokumentation befindet sich im Ordner [doc](doc/). Mit `doxygen doxygen_config` kann sie erneut erstellt werden.
 
 ### Beiträge
 
