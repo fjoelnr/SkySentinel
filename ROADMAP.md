@@ -85,9 +85,10 @@ Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das mod
 | [x] | 4 | Deep Sleep and Wake-Up | Implementation of Deep Sleep and Wake-Up for energy efficiency (partially completed) | Implementierung von Deep Sleep und Wake-Up für Energieeffizienz (teilweise abgeschlossen) | Medium |
 | [x] | 5 | Display Optimization | Optimization of the display (partially completed) | Optimierung der Anzeige (teilweise abgeschlossen) | Medium |
 | [x] | 6 | Firmware Merge for ESP32-Saola-1 and ESP32-Kaluga-1 | Merging the firmware for both boards (completed) | Zusammenführung der Firmware für ESP32-Saola-1 und ESP32-Kaluga-1 (abgeschlossen) | High |
-| [-] | 7 | Web App on ESP32 | Minimalistic web app for live data and configuration (not started) | Minimalistische Webanwendung für Live-Daten und Konfiguration (nicht begonnen) | Medium |
-| [ ] | 8 | API Development | Development of an API (not started) | Entwicklung einer API (nicht begonnen) | Medium |
-| [ ] | 9 | Server-based Web App (Raspberry Pi example) | Server-based web app with Docker integration (not started) | Serverbasierte Webanwendung mit Docker-Integration (nicht begonnen) | High |
-| [ ] | 10 | OTA Updates | Over-the-Air updates (not started) | OTA-Updates (nicht begonnen) | Medium |
-| [ ] | 11 | Additional Sensors Integration | Integration of additional sensors (not started) | Integration zusätzlicher Sensoren (nicht begonnen) | High |
-| [ ] | 12 | Integration into Home Automation Systems | Integration into ioBroker and Home Assistant (not started) | Integration in ioBroker und Home Assistant (nicht begonnen) | Medium |
+| [x] | 7 | Historical Data Logging | Ring buffer for storing 24h of data (completed) | Ringpuffer zur Speicherung von 24h Daten (abgeschlossen) | Medium |
+| [-] | 8 | Web App on ESP32 | Minimalistic web app for live data and configuration (in progress) | Minimalistische Webanwendung für Live-Daten und Konfiguration (in Arbeit) | Medium |
+| [ ] | 9 | API Development | Development of an API (not started) | Entwicklung einer API (nicht begonnen) | Medium |
+| [ ] | 10 | Server-based Web App (Raspberry Pi example) | Server-based web app with Docker integration (not started) | Serverbasierte Webanwendung mit Docker-Integration (nicht begonnen) | High |
+| [ ] | 11 | OTA Updates | Over-the-Air updates (not started) | OTA-Updates (nicht begonnen) | Medium |
+| [ ] | 12 | Additional Sensors Integration | Integration of additional sensors (not started) | Integration zusätzlicher Sensoren (nicht begonnen) | High |
+| [ ] | 13 | Integration into Home Automation Systems | Integration into ioBroker and Home Assistant (not started) | Integration in ioBroker und Home Assistant (nicht begonnen) | Medium |
