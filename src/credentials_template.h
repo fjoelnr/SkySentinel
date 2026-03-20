@@ -21,6 +21,11 @@
  */
 #define WIFI_PASSWORD "your_wifi_password"
 
+/**
+ * @brief Optional Wi-Fi hostname (DHCP/OTA name).
+ */
+#define WIFI_HOSTNAME "your_wifi_hostname"
+
 // MQTT Credentials
 // Replace with your actual MQTT credentials
 
