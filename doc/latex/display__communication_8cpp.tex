@@ -1,0 +1,104 @@
+\hypertarget{display__communication_8cpp}{}\doxysection{src/visualization/display\+\_\+communication.cpp File Reference}
+\label{display__communication_8cpp}\index{src/visualization/display\_communication.cpp@{src/visualization/display\_communication.cpp}}
+{\ttfamily \#include \char`\"{}display\+\_\+communication.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{display__communication_8cpp_a04c3728fb0800fe2f4789c4eeb96d5d7}{CUSTOM\+\_\+\+BLUE}}~0x\+FFE0
+\item 
+\#define \mbox{\hyperlink{display__communication_8cpp_ad9c1184458baed714a0938272f96bf35}{CUSTOM\+\_\+\+GREEN}}~0x\+F81F
+\item 
+\#define \mbox{\hyperlink{display__communication_8cpp_ac3356bdc0fb39418c4ff588e0cc309e0}{CUSTOM\+\_\+\+RED}}~0x07\+FF
+\item 
+\#define \mbox{\hyperlink{display__communication_8cpp_aee0b2dbef0b4ce85b3665bee1c6e582d}{NUM\+\_\+\+DATA\+\_\+\+POINTS}}~30
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{display__communication_8cpp_ab7383b7daf7dffcbd8fed935d14fa436}{update\+History\+Arrays}} (float \mbox{\hyperlink{main_8cpp_afc1d28cfbce795d6ea954ebe725241f5}{temperature}}, float \mbox{\hyperlink{main_8cpp_a6a87b2b0cff24d38b367ccd34843a206}{humidity}})
+\begin{DoxyCompactList}\small\item\em Updates the history arrays with the latest temperature and humidity values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{display__communication_8cpp_ab099d894e4c9ed13281ce5f114ca29b2}{temperature\+History}} \mbox{[}\mbox{\hyperlink{display__communication_8cpp_aee0b2dbef0b4ce85b3665bee1c6e582d}{NUM\+\_\+\+DATA\+\_\+\+POINTS}}\mbox{]} = \{0\}
+\item 
+float \mbox{\hyperlink{display__communication_8cpp_a86e4556567f9e489e21a33ea7deb1852}{humidity\+History}} \mbox{[}\mbox{\hyperlink{display__communication_8cpp_aee0b2dbef0b4ce85b3665bee1c6e582d}{NUM\+\_\+\+DATA\+\_\+\+POINTS}}\mbox{]} = \{0\}
+\item 
+unsigned long \mbox{\hyperlink{display__communication_8cpp_af1fe0bc376f8176fb4d5076c22fb5851}{last\+Update\+Time}} = 0
+\item 
+const unsigned long \mbox{\hyperlink{display__communication_8cpp_a56cbe7f463932051d17bba95b3cac9b4}{update\+Interval}} = 120000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{display__communication_8cpp_a04c3728fb0800fe2f4789c4eeb96d5d7}\label{display__communication_8cpp_a04c3728fb0800fe2f4789c4eeb96d5d7}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!CUSTOM\_BLUE@{CUSTOM\_BLUE}}
+\index{CUSTOM\_BLUE@{CUSTOM\_BLUE}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{CUSTOM\_BLUE}{CUSTOM\_BLUE}}
+{\footnotesize\ttfamily \#define CUSTOM\+\_\+\+BLUE~0x\+FFE0}
+
+\mbox{\Hypertarget{display__communication_8cpp_ad9c1184458baed714a0938272f96bf35}\label{display__communication_8cpp_ad9c1184458baed714a0938272f96bf35}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!CUSTOM\_GREEN@{CUSTOM\_GREEN}}
+\index{CUSTOM\_GREEN@{CUSTOM\_GREEN}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{CUSTOM\_GREEN}{CUSTOM\_GREEN}}
+{\footnotesize\ttfamily \#define CUSTOM\+\_\+\+GREEN~0x\+F81F}
+
+\mbox{\Hypertarget{display__communication_8cpp_ac3356bdc0fb39418c4ff588e0cc309e0}\label{display__communication_8cpp_ac3356bdc0fb39418c4ff588e0cc309e0}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!CUSTOM\_RED@{CUSTOM\_RED}}
+\index{CUSTOM\_RED@{CUSTOM\_RED}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{CUSTOM\_RED}{CUSTOM\_RED}}
+{\footnotesize\ttfamily \#define CUSTOM\+\_\+\+RED~0x07\+FF}
+
+\mbox{\Hypertarget{display__communication_8cpp_aee0b2dbef0b4ce85b3665bee1c6e582d}\label{display__communication_8cpp_aee0b2dbef0b4ce85b3665bee1c6e582d}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!NUM\_DATA\_POINTS@{NUM\_DATA\_POINTS}}
+\index{NUM\_DATA\_POINTS@{NUM\_DATA\_POINTS}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{NUM\_DATA\_POINTS}{NUM\_DATA\_POINTS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+DATA\+\_\+\+POINTS~30}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{display__communication_8cpp_ab7383b7daf7dffcbd8fed935d14fa436}\label{display__communication_8cpp_ab7383b7daf7dffcbd8fed935d14fa436}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!updateHistoryArrays@{updateHistoryArrays}}
+\index{updateHistoryArrays@{updateHistoryArrays}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{updateHistoryArrays()}{updateHistoryArrays()}}
+{\footnotesize\ttfamily void update\+History\+Arrays (\begin{DoxyParamCaption}\item[{float}]{temperature,  }\item[{float}]{humidity }\end{DoxyParamCaption})}
+
+
+
+Updates the history arrays with the latest temperature and humidity values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Current temperature value. \\
+\hline
+{\em humidity} & Current humidity value. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{display__communication_8cpp_a86e4556567f9e489e21a33ea7deb1852}\label{display__communication_8cpp_a86e4556567f9e489e21a33ea7deb1852}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!humidityHistory@{humidityHistory}}
+\index{humidityHistory@{humidityHistory}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{humidityHistory}{humidityHistory}}
+{\footnotesize\ttfamily float humidity\+History\mbox{[}\mbox{\hyperlink{display__communication_8cpp_aee0b2dbef0b4ce85b3665bee1c6e582d}{NUM\+\_\+\+DATA\+\_\+\+POINTS}}\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{display__communication_8cpp_af1fe0bc376f8176fb4d5076c22fb5851}\label{display__communication_8cpp_af1fe0bc376f8176fb4d5076c22fb5851}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!lastUpdateTime@{lastUpdateTime}}
+\index{lastUpdateTime@{lastUpdateTime}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{lastUpdateTime}{lastUpdateTime}}
+{\footnotesize\ttfamily unsigned long last\+Update\+Time = 0}
+
+\mbox{\Hypertarget{display__communication_8cpp_ab099d894e4c9ed13281ce5f114ca29b2}\label{display__communication_8cpp_ab099d894e4c9ed13281ce5f114ca29b2}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!temperatureHistory@{temperatureHistory}}
+\index{temperatureHistory@{temperatureHistory}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{temperatureHistory}{temperatureHistory}}
+{\footnotesize\ttfamily float temperature\+History\mbox{[}\mbox{\hyperlink{display__communication_8cpp_aee0b2dbef0b4ce85b3665bee1c6e582d}{NUM\+\_\+\+DATA\+\_\+\+POINTS}}\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{display__communication_8cpp_a56cbe7f463932051d17bba95b3cac9b4}\label{display__communication_8cpp_a56cbe7f463932051d17bba95b3cac9b4}} 
+\index{display\_communication.cpp@{display\_communication.cpp}!updateInterval@{updateInterval}}
+\index{updateInterval@{updateInterval}!display\_communication.cpp@{display\_communication.cpp}}
+\doxysubsubsection{\texorpdfstring{updateInterval}{updateInterval}}
+{\footnotesize\ttfamily const unsigned long update\+Interval = 120000}
+
