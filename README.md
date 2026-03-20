@@ -1,82 +1,120 @@
-# Modular Weather Station for ESP32 / Modulare Wetterstation für ESP32
+# SkySentinel
+
+Modular ESP32-S2 weather station firmware for indoor or outdoor telemetry, MQTT transport, optional Home Assistant auto-discovery, and OTA-friendly operation.
 
 [English](#english) | [Deutsch](#deutsch)
 
 ## English
 
-A versatile and modular weather station using ESP32 microcontrollers, with support for multiple sensors and data transmission options.
+SkySentinel is a builder-oriented firmware project for ESP32 weather stations. It currently targets the ESP32-S2 Saola and Kaluga boards and combines BME280 sensor readings, Wi-Fi connectivity, MQTT publishing, display support, and recent OTA integration work.
 
-This project is designed to be easily extended and customized to suit your needs. Whether you want to use different sensors or transmit data to different platforms, the Modular Weather Station for ESP32 makes it simple to create your own personalized weather station.
+### What It Does
 
-### Features
+- reads temperature, humidity, and pressure from a BME280
+- publishes weather data via MQTT
+- supports an indoor display node and an outdoor sensor node
+- can publish Home Assistant discovery payloads for MQTT entities
+- keeps the firmware small enough to iterate on quickly in PlatformIO
 
-* Support for BME280 sensor (temperature, humidity, and pressure)
-* Wi-Fi connectivity
-* MQTT data transmission
-* Easy integration with other sensors and data platforms
-* Compatible with ESP32-S2-Saola-1 and ESP32-S2-Kaluga-1 development boards
+### Current Focus
 
-For the planned features and improvements, please refer to the [Roadmap](ROADMAP.md).
+The current codebase is focused on:
 
-### Getting Started
+- ESP32-S2 outdoor station telemetry
+- MQTT topic cleanup and shared topic constants
+- OTA-triggered maintenance flows
+- display updates for the indoor station
+- incremental hardening with PlatformIO tests and GitHub Actions
 
-1. Clone this repository.
-2. Copy `src/credentials_template.h` to `src/credentials.h` and fill in your Wi-Fi and MQTT details.
-3. Follow the steps in the [setup guide](SETUP.md) to build and upload the firmware.
+Planned improvements remain tracked in [ROADMAP.md](ROADMAP.md).
+
+### Quick Start
+
+1. Clone the repository.
+2. Copy `src/credentials_template.h` to `src/credentials.h`.
+3. Fill in Wi-Fi, MQTT, and optional hostname values.
+4. Build the firmware with `platformio run`.
+5. Upload it with USB or your configured OTA target.
+
+See [SETUP.md](SETUP.md) for the practical setup flow.
+
+### Repository Layout
+
+```text
+src/sensors/         sensor adapters such as BME280
+src/network/         Wi-Fi and MQTT communication layers
+src/visualization/   display communication
+src/data_processing/ ring buffer and processing helpers
+test/                PlatformIO unit tests
+doc/                 generated Doxygen output
+```
 
 ### Documentation
 
-Detailed API documentation generated with Doxygen is available in the [doc](doc/) directory. Run `doxygen doxygen_config` to rebuild the documentation.
+- [SETUP.md](SETUP.md)
+- [STATUS.md](STATUS.md)
+- [ROADMAP.md](ROADMAP.md)
+- generated API docs in [doc](doc/)
 
 ### Contributing
 
-We welcome contributions from the community! If you'd like to contribute to the project, please read our [contributing guidelines](CONTRIBUTING.md) and [code of conduct](CODE_OF_CONDUCT.md).
+Before changing code, read:
 
-### Reporting Security Issues
-
-If you discover a security vulnerability in the Modular Weather Station for ESP32 project, please follow our [security policy](SECURITY.md) for responsibly reporting and disclosing the issue.
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [SECURITY.md](SECURITY.md)
+- [AGENTS.md](AGENTS.md)
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT, see [LICENSE](LICENSE).
 
 ---
 
 ## Deutsch
 
-Eine vielseitige und modulare Wetterstation mit ESP32-Mikrocontrollern, die Unterstützung für mehrere Sensoren und Datenübertragungsoptionen bietet.
+SkySentinel ist ein firmware-orientiertes ESP32-Wetterstationsprojekt fuer Indoor- und Outdoor-Szenarien. Der aktuelle Schwerpunkt liegt auf ESP32-S2-Boards, MQTT-gestuetzter Telemetrie, optionaler Home-Assistant-Auto-Discovery und einem OTA-faehigen Betriebsmodell.
 
-Dieses Projekt wurde entwickelt, um einfach erweitert und an Ihre Bedürfnisse angepasst zu werden. Ob Sie verschiedene Sensoren verwenden oder Daten auf unterschiedliche Plattformen übertragen möchten, die modulare Wetterstation für ESP32 macht es einfach, Ihre eigene personalisierte Wetterstation zu erstellen.
+### Was das Projekt aktuell kann
 
-### Funktionen
+- Temperatur, Luftfeuchtigkeit und Druck per BME280 erfassen
+- Wetterdaten per MQTT veroeffentlichen
+- Indoor-Display- und Outdoor-Sensorknoten abbilden
+- Home-Assistant-Discovery-Konfiguration per MQTT senden
+- schnelle Firmware-Iteration mit PlatformIO ermoeglichen
 
-* Unterstützung für BME280-Sensor (Temperatur, Luftfeuchtigkeit und Druck)
-* WLAN-Konnektivität
-* MQTT-Datenübertragung
-* Einfache Integration mit anderen Sensoren und Datenplattformen
-* Kompatibel mit ESP32-S2-Saola-1 und ESP32-S2-Kaluga-1-Entwicklungsboards
+### Aktueller Schwerpunkt
 
-Für die geplanten Funktionen und Verbesserungen, bitte schauen Sie in die [Roadmap](ROADMAP.md).
+- Outdoor-Telemetrie fuer ESP32-S2
+- gemeinsame MQTT-Topics und konsistente Topic-Namen
+- OTA-gestuetzte Wartung
+- Anzeige-Updates fuer die Indoor-Station
+- schrittweise Robustheit und Testabdeckung
 
-### Erste Schritte
+### Schnellstart
 
-1. Klonen Sie dieses Repository.
-2. Kopieren Sie `src/credentials_template.h` nach `src/credentials.h` und tragen Sie Ihre WLAN- und MQTT-Daten ein.
-3. Folgen Sie dem [Einrichtungsleitfaden](SETUP.md), um die Firmware zu bauen und auf das Board zu flashen.
+1. Repository klonen.
+2. `src/credentials_template.h` nach `src/credentials.h` kopieren.
+3. WLAN-, MQTT- und optionalen Hostnamen eintragen.
+4. Firmware mit `platformio run` bauen.
+5. Per USB oder konfiguriertem OTA-Ziel hochladen.
 
-### Dokumentation
+Details stehen in [SETUP.md](SETUP.md).
 
-Die mit Doxygen erzeugte API-Dokumentation befindet sich im Ordner [doc](doc/). Mit `doxygen doxygen_config` kann sie erneut erstellt werden.
+### Struktur
 
-### Beiträge
+```text
+src/sensors/         Sensoranbindungen wie BME280
+src/network/         Wi-Fi- und MQTT-Kommunikation
+src/visualization/   Display-Ansteuerung
+src/data_processing/ Ringpuffer und Datenverarbeitung
+test/                PlatformIO-Unit-Tests
+doc/                 generierte Doxygen-Dokumentation
+```
 
-Wir freuen uns über Beiträge aus der Community! Wenn Sie zum Projekt beitragen möchten, lesen Sie bitte unsere [Richtlinien für Beiträge](CONTRIBUTING.md) und den [Verhaltenskodex](CODE_OF_CONDUCT.md).
+### Weitere Doku
 
-### Melden von Sicherheitsproblemen
-
-Wenn Sie eine Sicherheitslücke im Projekt Modular Weather Station for ESP32 entdecken, befolgen Sie bitte unsere [Sicherheitsrichtlinie](SECURITY.md), um das Problem verantwortungsvoll zu melden und offenzulegen.
-
-### Lizenz
-
-Dieses Projekt steht unter der MIT-Lizenz - siehe die [LICENSE](LICENSE) für Details.
+- [SETUP.md](SETUP.md)
+- [STATUS.md](STATUS.md)
+- [ROADMAP.md](ROADMAP.md)
+- generierte API-Doku unter [doc](doc/)
 
