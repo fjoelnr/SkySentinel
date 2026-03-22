@@ -19,16 +19,18 @@ The current codebase already covers the core weather-station loop:
 - shared topic definitions for weather data
 - Home Assistant discovery publishing
 - ring-buffer based weather data storage
+- OTA handling in the outdoor node runtime
+- indoor display rendering from shared MQTT topics
 
 ## What Still Needs Work
 
-- clearer operator-facing setup notes for OTA deployments
-- more explicit distinction between indoor and outdoor device roles
 - more unit tests around MQTT callback and reconnect behavior
 - cleaner separation between generated docs and authored docs
+- board-role and operations docs must stay aligned with `platformio.ini`
 
 ## Current Risk Areas
 
 - OTA and Wi-Fi reconnect paths are operationally sensitive
 - board-specific pin definitions remain configuration-heavy
 - local network deployment details can drift from checked-in docs
+- MQTT payload handling is still simple and should remain tightly scoped
