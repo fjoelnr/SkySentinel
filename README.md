@@ -53,6 +53,8 @@ doc/                 generated Doxygen output
 
 - [SETUP.md](SETUP.md)
 - [STATUS.md](STATUS.md)
+- [OPERATIONS.md](OPERATIONS.md)
+- [TOPIC_CONTRACT.md](TOPIC_CONTRACT.md)
 - [ROADMAP.md](ROADMAP.md)
 - generated API docs in [doc](doc/)
 
@@ -115,6 +117,8 @@ doc/                 generierte Doxygen-Dokumentation
 
 - [SETUP.md](SETUP.md)
 - [STATUS.md](STATUS.md)
+- [OPERATIONS.md](OPERATIONS.md)
+- [TOPIC_CONTRACT.md](TOPIC_CONTRACT.md)
 - [ROADMAP.md](ROADMAP.md)
 - generierte API-Doku unter [doc](doc/)
 
