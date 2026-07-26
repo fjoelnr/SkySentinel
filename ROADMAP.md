@@ -32,11 +32,11 @@ This roadmap outlines the planned features and improvements for the Modular Weat
    e. Implement an alerting function for specific weather conditions
 
 6. **OTA (Over-the-Air) functionality:**
-   - Implement OTA updates for the weather station firmware
+   - Harden OTA updates for the weather station firmware and maintenance flows
 
 7. **Integration with home automation systems:**
    a. Integrate with ioBroker
-   b. Integrate with Home Assistant
+   b. Extend the existing Home Assistant MQTT discovery integration
 
 ### Deutsch
 
@@ -70,11 +70,11 @@ Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das mod
    e. Implementierung einer Alarmierungsfunktion für bestimmte Wetter
 
 6. **OTA (Over-the-Air)-Funktionalität:**
-   - Implementierung von OTA-Updates für die Firmware der Wetterstation
+   - Härtung von OTA-Updates und Wartungsabläufen für die Wetterstations-Firmware
 
 7. **Integration in Hausautomatisierungssysteme:**
    a. Integration in ioBroker
-   b. Integration in Home Assistant
+   b. Ausbau der vorhandenen Home-Assistant-MQTT-Discovery-Integration
 
 ### Status
 | Status | Priority | Task | Description (English) | Beschreibung (Deutsch) | Complexity |
@@ -85,10 +85,9 @@ Diese Roadmap skizziert die geplanten Funktionen und Verbesserungen für das mod
 | [x] | 4 | Deep Sleep and Wake-Up | Implementation of Deep Sleep and Wake-Up for energy efficiency (partially completed) | Implementierung von Deep Sleep und Wake-Up für Energieeffizienz (teilweise abgeschlossen) | Medium |
 | [x] | 5 | Display Optimization | Optimization of the display (partially completed) | Optimierung der Anzeige (teilweise abgeschlossen) | Medium |
 | [x] | 6 | Firmware Merge for ESP32-Saola-1 and ESP32-Kaluga-1 | Merging the firmware for both boards (completed) | Zusammenführung der Firmware für ESP32-Saola-1 und ESP32-Kaluga-1 (abgeschlossen) | High |
-| [x] | 7 | Historical Data Logging | Ring buffer for storing 24h of data (completed) | Ringpuffer zur Speicherung von 24h Daten (abgeschlossen) | Medium |
-| [-] | 8 | Web App on ESP32 | Minimalistic web app for live data and configuration (in progress) | Minimalistische Webanwendung für Live-Daten und Konfiguration (in Arbeit) | Medium |
-| [ ] | 9 | API Development | Development of an API (not started) | Entwicklung einer API (nicht begonnen) | Medium |
-| [ ] | 10 | Server-based Web App (Raspberry Pi example) | Server-based web app with Docker integration (not started) | Serverbasierte Webanwendung mit Docker-Integration (nicht begonnen) | High |
-| [ ] | 11 | OTA Updates | Over-the-Air updates (not started) | OTA-Updates (nicht begonnen) | Medium |
-| [ ] | 12 | Additional Sensors Integration | Integration of additional sensors (not started) | Integration zusätzlicher Sensoren (nicht begonnen) | High |
-| [ ] | 13 | Integration into Home Automation Systems | Integration into ioBroker and Home Assistant (not started) | Integration in ioBroker und Home Assistant (nicht begonnen) | Medium |
+| [-] | 7 | Web App on ESP32 | Minimalistic web app for live data and configuration (not started) | Minimalistische Webanwendung für Live-Daten und Konfiguration (nicht begonnen) | Medium |
+| [ ] | 8 | API Development | Development of an API (not started) | Entwicklung einer API (nicht begonnen) | Medium |
+| [ ] | 9 | Server-based Web App (Raspberry Pi example) | Server-based web app with Docker integration (not started) | Serverbasierte Webanwendung mit Docker-Integration (nicht begonnen) | High |
+| [~] | 10 | OTA Updates | OTA support exists; the next step is hardening update and maintenance behavior | OTA-Unterstützung existiert; als Nächstes folgt die Härtung von Update- und Wartungsverhalten | Medium |
+| [ ] | 11 | Additional Sensors Integration | Integration of additional sensors (not started) | Integration zusätzlicher Sensoren (nicht begonnen) | High |
+| [~] | 12 | Integration into Home Automation Systems | Home Assistant MQTT discovery exists; ioBroker and broader automation integration remain open | Home-Assistant-MQTT-Discovery existiert; ioBroker und breitere Automatisierungsintegration sind noch offen | Medium |

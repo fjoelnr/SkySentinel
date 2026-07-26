@@ -2,14 +2,16 @@ name: Code Format
 
 on:
   push:
+    branches: [ develop, main ]
   pull_request:
+    branches: [ develop, main ]
 
 jobs:
   format:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Install clang-format
       run: sudo apt-get install -y clang-format

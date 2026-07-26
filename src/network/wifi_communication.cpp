@@ -12,39 +12,52 @@
  * @param ssid The Wi-Fi SSID.
  * @param password The Wi-Fi password.
  */
-WifiCommunication::WifiCommunication(const char* ssid, const char* password)
-    : ssid(ssid), password(password) {}
+WifiCommunication::WifiCommunication(const char* ssid, const char* password, const char* hostname)
+    : ssid(ssid), password(password), hostname(hostname) {}
 
 /**
  * @brief Set up the Wi-Fi module.
  */
 void WifiCommunication::setup() {
   WiFi.mode(WIFI_STA);
+  WiFi.setAutoReconnect(true);
+  WiFi.persistent(false);
+  if (hostname && hostname[0] != '\0') {
+    WiFi.setHostname(hostname);
+  }
 }
 
 /**
  * @brief Connect to the Wi-Fi network.
  */
-void WifiCommunication::connect() {
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.print("Connecting to " + String(ssid) + " ");
-    WiFi.begin(ssid, password);
-    unsigned long startAttemptTime = millis();
-
-    while (WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < 10000) { // 10 Sekunden Timeout
-      delay(500);
-      Serial.print(".");
-    }
-
-    if (WiFi.status() != WL_CONNECTED) {
-      Serial.println("Connection Failed! Rebooting...");
-      delay(5000);
-      ESP.restart();
-    } else {
-      Serial.println("");
-      Serial.println("WiFi connected with IP address: " + WiFi.localIP().toString());
-    }
+bool WifiCommunication::connect(uint32_t timeoutMs) {
+  if (WiFi.status() == WL_CONNECTED) {
+    return true;
   }
+
+  Serial.print("Connecting to " + String(ssid) + " ");
+  // Ensure fresh DHCP request and hostname before connecting
+  WiFi.disconnect(true, true);
+  delay(100);
+  if (hostname && hostname[0] != '\0') {
+    WiFi.setHostname(hostname);
+  }
+  WiFi.begin(ssid, password);
+  unsigned long startAttemptTime = millis();
+
+  while (WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < timeoutMs) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.printf("Connection Failed! status=%d. Will retry later.\n", WiFi.status());
+    return false;
+  }
+
+  Serial.println();
+  Serial.println("WiFi connected with IP address: " + WiFi.localIP().toString());
+  return true;
 }
 
 /**
@@ -55,4 +68,8 @@ void WifiCommunication::disconnect() {
     WiFi.disconnect();
     Serial.println("Disconnected from WiFi");
   }
+}
+
+bool WifiCommunication::isConnected() const {
+  return WiFi.status() == WL_CONNECTED;
 }
