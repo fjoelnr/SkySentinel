@@ -4,6 +4,9 @@
 #include "visualization/display_communication.h"
 #include "network/wifi_communication.h"
 #include "network/mqtt_communication.h"
+#include "network/web_server.h"
+#include "network/ota_update.h"
+#include "network/web_server.h"
 #include "data_processing/data_processing.h"
 #include "credentials.h"
 #include "esp_sleep.h"
@@ -15,9 +18,14 @@ BME280Communication bme;
 DisplayCommunication display(TFT_CS, TFT_DC, TFT_MOSI, TFT_CLK, TFT_RST);
 WifiCommunication wifi(WIFI_SSID, WIFI_PASSWORD, WIFI_HOSTNAME);
 MqttCommunication mqtt(MQTT_SERVER, MQTT_PORT, MQTT_USERNAME, MQTT_PASSWORD);
+WebServerWrapper webServer(80);
 
 // Variables to store sensor data
 float temperature, humidity, pressure;
+
+float getTemperature() { return temperature; }
+float getHumidity() { return humidity; }
+float getPressure() { return pressure; }
 
 // Time between measurements and data transfers in seconds
 // Time between measurements and data transfers in seconds
@@ -54,6 +62,13 @@ void setup() {
   wifi.setup();
   wifi.connect();
   Serial.println(" done! ");
+
+  // Setup OTA updates
+  OTAUpdate::setup();
+
+  // Setup web server
+  webServer.setSensorDataProvider(getTemperature, getHumidity, getPressure);
+  webServer.setup();
   
   // Setup MQTT server
   Serial.print("Setup MQTT server...");
